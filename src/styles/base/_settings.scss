@@ -1,0 +1,109 @@
+// Theme Colors
+$theme: rgb(81, 138, 219); //blue
+//$theme: rgb(221, 0, 0); //red
+//$theme: rgb(221, 81, 0); //orange
+//$theme: rgb(0, 173, 9); //green
+//$theme: black;
+//$theme: grey;
+
+//breakpoints for full-screen modals
+$width-breakpoint: 40rem;
+$height-breakpoint: 45rem;
+$default-app-size: 62.5%; //62.5% will mean that .1rem = 1px
+//$width-breakpoint: 60rem;
+//$height-breakpoint: 65rem;
+//$default-app-size: 100%; //62.5% will mean that .1rem = 1px
+
+$font-family-default: 'Source Sans Pro', sans-serif;
+$font-default: rgb(205,215,197);
+$font-default-light: rgb(38,38,38);
+$font-subtle: rgb(110, 110, 110);
+$font-subtle-light: rgb(183, 188, 197);
+$selected: rgb(255,255,255);
+$selected-bg: rgb(156,154,148);
+$hover: rgb(80,80,80);
+$base: rgb(38,38,38);
+//$base-light: rgb(241, 241, 241);
+$base-light: white;
+$surround: rgb(53,54,56);
+$surround-light: rgb(137, 140, 146);
+$surround-light: rgb(226, 226, 226);
+$shadow: rgb(0,0,0);
+$divider: $selected-bg;
+
+$other-user: $theme;
+$user: rgb(204, 0, 0);
+$system: rgb(255, 166, 0);
+$op: rgb(0, 128, 0);
+$voice: $theme;
+
+$ping-good: rgb(0, 148, 0);
+$ping-ok: rgb(221, 125, 0);
+$ping-bad: rgb(167, 0, 0);
+
+//channel highlight colors
+$channel-current-bg: rgb(80,80,80);
+$channel-current-bg-light: rgb(221, 221, 221);
+$channel-current: $selected;
+$channel-selected-border: $selected;
+$channel-new-notif: $system;
+$channel-new-message: rgb(21, 255, 0);
+$channel-mention: rgb(255, 0, 234);
+$channel-not-joined: rgb(82, 82, 82);
+
+$scroll-track: $surround;
+$scroll-track-hover: $surround;
+$scroll-thumb: $theme;
+$scroll-thumb-hover: $theme;
+
+// Spacing
+$s-size: 1.2rem;
+$m-size: 1.6rem;
+$l-size: 3.2rem;
+$xl-size: 4.8rem;
+
+//Break points NOTE - these also need to be altered in ./components/WindowResize.js
+$vertical-break-point: 20rem;
+//$horizontal-break-point: 50rem;
+$horizontal-timestamp-break-point: 70rem;
+
+// Sizing
+$bar-height: 3rem;
+$element-margin: 0.2rem;
+$element-margin-h: 0.1rem; //should be half of $element-margin
+$element-border: 0.1rem;
+$channel-list-padding: 0.4rem 1.4rem 0.4rem 1.5rem; //padding for channel name list
+$user-list-padding: 0.4rem 1.4rem 0.4rem 0.4rem; //padding for username list
+
+/*
+
+See ./utils/styleInfo.js where the fonts and colors are defined
+Google fonts installed:
+
+font-family: 'Kavivanar', cursive;
+font-family: 'Tajawal', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Indie Flower', cursive;
+font-family: 'Inconsolata', monospace;
+font-family: 'Dosis', sans-serif;
+font-family: 'Quicksand', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Abel', sans-serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Exo', sans-serif;
+font-family: 'Kanit', sans-serif;
+font-family: 'Ropa Sans', sans-serif;
+font-family: 'Courgette', cursive;
+font-family: 'Permanent Marker', cursive;
+font-family: 'Orbitron', sans-serif;
+font-family: 'Concert One', cursive;
+font-family: 'Fredoka One', cursive;
+font-family: 'Luckiest Guy', cursive;
+font-family: 'Jura', sans-serif;
+font-family: 'Kalam', cursive;
+font-family: 'Marck Script', cursive;
+font-family: 'Audiowide', cursive;
+font-family: 'VT323', monospace;
+font-family: 'Architects Daughter', cursive;
+
+*/
