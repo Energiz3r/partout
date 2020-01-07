@@ -6,7 +6,7 @@ class LoginForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      loginURL: window.loginURL,
+      loginURL: window.serverData.loginURL,
       termsAccepted: false
     }
   }
@@ -46,6 +46,8 @@ class LoginForm extends React.Component {
                   }}
                   >
                 </div>
+
+                {/* <p>{this.state.loginURL}</p> */}
 
                 <p>Please log in using Facebook to continue. We do not receive or store any of your personal or profile information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information or use it for any other purpose except with your express permission.</p>
 

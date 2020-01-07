@@ -15,9 +15,10 @@ class AppMain extends React.Component {
     super(props)
     this.state = {
       result: '',
-      loggedIn: window.loggedIn == 'yes' ? true : false,
-      userName: window.userName,
-      userID: window.userID
+      loggedIn: window.serverData.loggedIn, // already converted to boolean by PHP
+      userName: window.serverData.userName,
+      userID: window.serverData.userID,
+      loginURL: window.serverData.loginURL,
     }
   }
   componentDidMount() {
@@ -46,14 +47,15 @@ class AppMain extends React.Component {
       )
   }
   render() {
-    const { result, loggedIn, userName, userId } = this.state
+    const { result, loggedIn, userName, userID, loginURL } = this.state
     return (
       <Router>
         <div className={"app-root-container"}>
         <p>Result: {result}</p>
             <p>loggedIn: {loggedIn ? "yes" : "no"}</p>
             <p>UserName: {userName}</p>
-            <p>userId: {userId}</p>
+            <p>userId: {userID}</p>
+            <p>loginURL: {loginURL}</p>
           <DOMHandler />
           <div className={"app-overlay-container" + (this.props.userInterface.appIsBlurred ? " blur-container" : "")}>
             

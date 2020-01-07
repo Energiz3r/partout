@@ -29250,9 +29250,10 @@ var AppMain = function (_React$Component) {
 
     _this.state = {
       result: '',
-      loggedIn: window.loggedIn == 'yes' ? true : false,
-      userName: window.userName,
-      userID: window.userID
+      loggedIn: window.serverData.loggedIn, // already converted to boolean by PHP
+      userName: window.serverData.userName,
+      userID: window.serverData.userID,
+      loginURL: window.serverData.loginURL
     };
     return _this;
   }
@@ -29290,7 +29291,8 @@ var AppMain = function (_React$Component) {
           result = _state.result,
           loggedIn = _state.loggedIn,
           userName = _state.userName,
-          userId = _state.userId;
+          userID = _state.userID,
+          loginURL = _state.loginURL;
 
       return _react2.default.createElement(
         _reactRouterDom.BrowserRouter,
@@ -29320,7 +29322,13 @@ var AppMain = function (_React$Component) {
             'p',
             null,
             'userId: ',
-            userId
+            userID
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'loginURL: ',
+            loginURL
           ),
           _react2.default.createElement(_DOMHandler2.default, null),
           _react2.default.createElement(
@@ -29490,7 +29498,7 @@ var LoginForm = function (_React$Component) {
     _this.componentWillUnmount = function () {};
 
     _this.state = {
-      loginURL: window.loginURL,
+      loginURL: window.serverData.loginURL,
       termsAccepted: false
     };
     return _this;
@@ -29517,7 +29525,7 @@ var LoginForm = function (_React$Component) {
                 _react2.default.createElement(
                   'h4',
                   null,
-                  'Welcome to ParOut!'
+                  'Welcome to PartOut!'
                 ),
                 _react2.default.createElement('div', {
                   className: 'fb-login-button',
