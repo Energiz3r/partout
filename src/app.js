@@ -6,6 +6,37 @@ import './styles/styles.scss'
 import { store } from './stores/store'
 import AppMain from './components/AppMain'
 
+import {
+  setLoginStatus
+} from './actions/actions';
+
+if (!window.serverData) { window.serverData = {} }
+
+const facebookCallback = (response) => {
+  if (response.status == 'connected') {
+    console.log("Logged in successfully!")
+    store.dispatch(setLoginStatus(true));
+  } else {
+    console.log("Logged in failed!")
+    store.dispatch(setLoginStatus(false));
+  }
+  return false
+}
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '750335742141550',
+    cookie     : true,  // enable cookies to allow the server to access the session
+    cookie: true, 
+    xfbml: false,
+    status: true,
+    oauth: true,
+    version    : 'v3.2'
+  })
+  FB.Event.subscribe('auth.statusChange', function(response) {
+    facebookCallback(response)
+  })
+}.bind(this);
+
 // browser detection
 //var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0; // Opera 8.0+
 //var isFirefox = typeof InstallTrigger !== 'undefined'; // Firefox 1.0+

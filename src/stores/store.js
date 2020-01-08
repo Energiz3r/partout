@@ -4,7 +4,7 @@ import loginReducer from '../reducers/loginReducer';
 import { buildForDev } from '../config';
 import {
   setUIState,
-  setLoginState,
+  initLoginState,
 } from '../actions/actions';
 
 //CREATE STORE
@@ -29,5 +29,5 @@ export const store = configureStore();
 
 // populate the state with default values
 store.dispatch(setUIState());
-store.dispatch(setLoginState());
+store.dispatch(initLoginState());
 

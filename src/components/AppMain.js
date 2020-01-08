@@ -14,56 +14,19 @@ class AppMain extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      result: '',
-      loggedIn: window.serverData.loggedIn, // already converted to boolean by PHP
-      userName: window.serverData.userName,
-      userID: window.serverData.userID,
-      loginURL: window.serverData.loginURL,
     }
   }
   componentDidMount() {
-    fetch("https://noobs.wtf/api.php", {
-      //crossDomain: true,
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({
-        action: 'checkLogin',
-        value: 'test'
-      })
-    })
-      .then(res => res.json())
-      .then(
-        (result) => {
-          console.log(result)
-          this.setState({
-            result: result
-          })
-        },
-        (error) => {
-          this.setState({
-            result: "error: " + error
-          })
-        }
-      )
   }
   render() {
-    const { result, loggedIn, userName, userID, loginURL } = this.state
     return (
       <Router>
         <div className={"app-root-container"}>
-        <p>Result: {result}</p>
-            <p>loggedIn: {loggedIn ? "yes" : "no"}</p>
-            <p>UserName: {userName}</p>
-            <p>userId: {userID}</p>
-            <p>loginURL: {loginURL}</p>
+          <p>loggedIn: {this.props.loginState.loggedIn ? "yes" : "no"}</p>
           <DOMHandler />
           <div className={"app-overlay-container" + (this.props.userInterface.appIsBlurred ? " blur-container" : "")}>
             
-            <Switch>
-              <Route path="/">
-                <LoginForm />
-              </Route>
-            </Switch>
+          {!this.props.loginState.loggedIn && <LoginForm />}
 
             <div className={'app-color-overlay' + (this.props.userInterface.appIsBlurred ? ' app-color-overlay-visible' : ' app-color-overlay-invisible')}></div>
           </div>
