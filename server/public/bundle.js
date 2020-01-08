@@ -15086,7 +15086,11 @@ if (!window.serverData) {
 var facebookCallback = function facebookCallback(response) {
   if (response.status == 'connected') {
     console.log("Logged in successfully!");
-    _store.store.dispatch((0, _actions.setLoginStatus)(true));
+    setTimeout(function () {
+      console.log("Runing dispatch");
+      _store.store.dispatch((0, _actions.setLoginStatus)(true));
+    }, 2000);
+    //store.dispatch(setLoginStatus(true));
   } else {
     console.log("Logged in failed!");
     _store.store.dispatch((0, _actions.setLoginStatus)(false));

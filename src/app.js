@@ -15,7 +15,11 @@ if (!window.serverData) { window.serverData = {} }
 const facebookCallback = (response) => {
   if (response.status == 'connected') {
     console.log("Logged in successfully!")
-    store.dispatch(setLoginStatus(true));
+    setTimeout(()=>{
+      console.log("Runing dispatch")
+      store.dispatch(setLoginStatus(true));
+    },1000)
+    //store.dispatch(setLoginStatus(true));
   } else {
     console.log("Logged in failed!")
     store.dispatch(setLoginStatus(false));
