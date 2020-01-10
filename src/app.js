@@ -7,22 +7,85 @@ import { store } from './stores/store'
 import AppMain from './components/AppMain'
 
 import {
-  setLoginStatus
+  setLoginStatusFacebook,
+  setLoginStatusPartout
 } from './actions/actions';
 
 if (!window.serverData) { window.serverData = {} }
 
+const partOutLoginRequest = () => {
+  console.log("Logging into to Partout...")
+  fetch("api.php", {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "action": "partoutLogin"
+    })
+  })
+    //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
+    .then(result => result.json())
+    .then(
+      (result) => {
+        if (result.loggedIn === "1") {
+          console.log(result)
+          console.log("Partout auth successful...")
+        } else {
+          console.log("Partout auth failed:")
+          console.log(result)
+        }
+      },
+      (error) => {
+        console.log("error:")
+        console.log(error)
+      }
+    )
+}
+const facebookLoginCheck = (fbResponse) => {
+  console.log("Checking facebook auth with Partout...")
+  fetch("api.php", {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "action": "facebookLogin",
+      "fb_access_token": fbResponse.accessToken
+    })
+  })
+    //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
+    .then(result => result.json())
+    .then(
+      (result) => {
+        if (result.loggedIn === "1") {
+          partOutLoginRequest()
+          console.log("Partout auth'd facebook successfully...")
+        } else {
+          console.log("Partout failed facebook auth:")
+          console.log(result)
+        }
+      },
+      (error) => {
+        console.log("error:")
+        console.log(error)
+      }
+    )
+}
+
 const facebookCallback = (response) => {
+  console.log("Facebook auth response received:")
+  console.log(response)
   if (response.status == 'connected') {
-    console.log("Logged in successfully!")
     setTimeout(()=>{
-      console.log("Runing dispatch")
-      store.dispatch(setLoginStatus(true));
+      store.dispatch(setLoginStatusFacebook(true))
+      facebookLoginCheck(response.authResponse)
     },1000)
-    //store.dispatch(setLoginStatus(true));
   } else {
-    console.log("Logged in failed!")
-    store.dispatch(setLoginStatus(false));
+    store.dispatch(setLoginStatusFacebook(false))
+    store.dispatch(setLoginStatusPartout(false))
   }
   return false
 }
