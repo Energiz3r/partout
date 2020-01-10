@@ -21,17 +21,21 @@ class LoginForm extends React.Component {
 
                 <h4>Welcome to PartOut!</h4>
 
-                <div
-                  className="fb-login-button"
-                  data-width=""
-                  data-size="large"
-                  data-button-type="continue_with"
-                  data-auto-logout-link="false"
-                  data-use-continue-as="true"
-                  >
-                </div>
+                {this.props.loginState.loggedInFacebook && !this.props.loginState.loggedInPartout && <p>Logging in...</p>}
 
-                <p>Please log in using Facebook to continue. We do not receive or store any of your personal or profile information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information or use it for any other purpose except with your express permission.</p>
+                {!this.props.loginState.loggedInFacebook && 
+                  <div
+                    className="fb-login-button"
+                    data-width=""
+                    data-size="large"
+                    data-button-type="continue_with"
+                    data-auto-logout-link="false"
+                    data-use-continue-as="true"
+                    >
+                  </div>
+                }
+
+                {!this.props.loginState.loggedInFacebook && <p>Please log in using Facebook to continue. We do not receive or store any of your personal or profile information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information or use it for any other purpose except with your express permission.</p> }
 
               </div>
 

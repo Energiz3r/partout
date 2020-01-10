@@ -2,16 +2,23 @@ import log from '../utils/log'
 
 export const initLoginState = (
   {
-    loggedIn = false
+    loggedInFacebook = false,
+    loggedInPartout = false
   } = {}
 ) => ({
   type: 'INIT_LOGIN_STATE',
   loginState: {
-    loggedIn
+    loggedInFacebook,
+    loggedInPartout
   }
-});
+})
   
-export const setLoginStatus = (status) => ({
-  type: 'SET_LOGIN_STATUS',
+export const setLoginStatusFacebook = (status) => ({
+  type: 'SET_LOGIN_STATUS_FACEBOOK',
   status
-});
+})
+
+export const setLoginStatusPartout = (status) => ({
+  type: 'SET_LOGIN_STATUS_PARTOUT',
+  status
+})

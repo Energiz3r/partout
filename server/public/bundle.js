@@ -15083,17 +15083,75 @@ if (!window.serverData) {
   window.serverData = {};
 }
 
+var partOutLoginRequest = function partOutLoginRequest() {
+  console.log("Logging into to Partout...");
+  fetch("api.php", {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "action": "partoutLogin"
+    })
+  })
+  //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
+  .then(function (result) {
+    return result.json();
+  }).then(function (result) {
+    if (result.loggedIn === "1") {
+      console.log(result);
+      console.log("Partout auth successful...");
+    } else {
+      console.log("Partout auth failed:");
+      console.log(result);
+    }
+  }, function (error) {
+    console.log("error:");
+    console.log(error);
+  });
+};
+var facebookLoginCheck = function facebookLoginCheck(fbResponse) {
+  console.log("Checking facebook auth with Partout...");
+  fetch("api.php", {
+    method: 'POST',
+    cache: 'no-cache',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      "action": "facebookLogin",
+      "fb_access_token": fbResponse.accessToken
+    })
+  })
+  //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
+  .then(function (result) {
+    return result.json();
+  }).then(function (result) {
+    if (result.loggedIn === "1") {
+      partOutLoginRequest();
+      console.log("Partout auth'd facebook successfully...");
+    } else {
+      console.log("Partout failed facebook auth:");
+      console.log(result);
+    }
+  }, function (error) {
+    console.log("error:");
+    console.log(error);
+  });
+};
+
 var facebookCallback = function facebookCallback(response) {
+  console.log("Facebook auth response received:");
+  console.log(response);
   if (response.status == 'connected') {
-    console.log("Logged in successfully!");
     setTimeout(function () {
-      console.log("Runing dispatch");
-      _store.store.dispatch((0, _actions.setLoginStatus)(true));
-    }, 2000);
-    //store.dispatch(setLoginStatus(true));
+      _store.store.dispatch((0, _actions.setLoginStatusFacebook)(true));
+      facebookLoginCheck(response.authResponse);
+    }, 1000);
   } else {
-    console.log("Logged in failed!");
-    _store.store.dispatch((0, _actions.setLoginStatus)(false));
+    _store.store.dispatch((0, _actions.setLoginStatusFacebook)(false));
+    _store.store.dispatch((0, _actions.setLoginStatusPartout)(false));
   }
   return false;
 };
@@ -28851,9 +28909,13 @@ exports.default = function () {
   switch (action.type) {
     case 'INIT_LOGIN_STATE':
       return action.loginState;
-    case 'SET_LOGIN_STATUS':
+    case 'SET_LOGIN_STATUS_FACEBOOK':
       return _extends({}, state, {
-        loggedIn: action.status
+        loggedInFacebook: action.status
+      });
+    case 'SET_LOGIN_STATUS_PARTOUT':
+      return _extends({}, state, {
+        loggedInPartout: action.status
       });
     default:
       return state;
@@ -28870,7 +28932,7 @@ exports.default = function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.setLoginStatus = exports.initLoginState = undefined;
+exports.setLoginStatusPartout = exports.setLoginStatusFacebook = exports.initLoginState = undefined;
 
 var _log = __webpack_require__(237);
 
@@ -28880,20 +28942,30 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var initLoginState = exports.initLoginState = function initLoginState() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
-      _ref$loggedIn = _ref.loggedIn,
-      loggedIn = _ref$loggedIn === undefined ? false : _ref$loggedIn;
+      _ref$loggedInFacebook = _ref.loggedInFacebook,
+      loggedInFacebook = _ref$loggedInFacebook === undefined ? false : _ref$loggedInFacebook,
+      _ref$loggedInPartout = _ref.loggedInPartout,
+      loggedInPartout = _ref$loggedInPartout === undefined ? false : _ref$loggedInPartout;
 
   return {
     type: 'INIT_LOGIN_STATE',
     loginState: {
-      loggedIn: loggedIn
+      loggedInFacebook: loggedInFacebook,
+      loggedInPartout: loggedInPartout
     }
   };
 };
 
-var setLoginStatus = exports.setLoginStatus = function setLoginStatus(status) {
+var setLoginStatusFacebook = exports.setLoginStatusFacebook = function setLoginStatusFacebook(status) {
   return {
-    type: 'SET_LOGIN_STATUS',
+    type: 'SET_LOGIN_STATUS_FACEBOOK',
+    status: status
+  };
+};
+
+var setLoginStatusPartout = exports.setLoginStatusPartout = function setLoginStatusPartout(status) {
+  return {
+    type: 'SET_LOGIN_STATUS_PARTOUT',
     status: status
   };
 };
@@ -29218,17 +29290,11 @@ var AppMain = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: "app-root-container" },
-          _react2.default.createElement(
-            'p',
-            null,
-            'loggedIn: ',
-            this.props.loginState.loggedIn ? "yes" : "no"
-          ),
           _react2.default.createElement(_DOMHandler2.default, null),
           _react2.default.createElement(
             'div',
             { className: "app-overlay-container" + (this.props.userInterface.appIsBlurred ? " blur-container" : "") },
-            !this.props.loginState.loggedIn && _react2.default.createElement(_LoginForm2.default, null),
+            (!this.props.loginState.loggedInFacebook || !this.props.loginState.loggedInPartout) && _react2.default.createElement(_LoginForm2.default, null),
             _react2.default.createElement('div', { className: 'app-color-overlay' + (this.props.userInterface.appIsBlurred ? ' app-color-overlay-visible' : ' app-color-overlay-invisible') })
           )
         )
@@ -29398,7 +29464,12 @@ var LoginForm = function (_React$Component) {
                   null,
                   'Welcome to PartOut!'
                 ),
-                _react2.default.createElement('div', {
+                this.props.loginState.loggedInFacebook && !this.props.loginState.loggedInPartout && _react2.default.createElement(
+                  'p',
+                  null,
+                  'Logging in...'
+                ),
+                !this.props.loginState.loggedInFacebook && _react2.default.createElement('div', {
                   className: 'fb-login-button',
                   'data-width': '',
                   'data-size': 'large',
@@ -29406,7 +29477,7 @@ var LoginForm = function (_React$Component) {
                   'data-auto-logout-link': 'false',
                   'data-use-continue-as': 'true'
                 }),
-                _react2.default.createElement(
+                !this.props.loginState.loggedInFacebook && _react2.default.createElement(
                   'p',
                   null,
                   'Please log in using Facebook to continue. We do not receive or store any of your personal or profile information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information or use it for any other purpose except with your express permission.'

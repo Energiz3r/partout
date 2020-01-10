@@ -22,12 +22,12 @@ class AppMain extends React.Component {
     return (
       <Router>
         <div className={"app-root-container"}>
-          <p>loggedIn: {this.props.loginState.loggedIn ? "yes" : "no"}</p>
           <DOMHandler />
-          <div className={"app-overlay-container" + (this.props.userInterface.appIsBlurred ? " blur-container" : "")}>
-            
-          {!this.props.loginState.loggedIn && <LoginForm />}
 
+          
+
+          <div className={"app-overlay-container" + (this.props.userInterface.appIsBlurred ? " blur-container" : "")}>
+            {(!this.props.loginState.loggedInFacebook || !this.props.loginState.loggedInPartout) && <LoginForm />}
             <div className={'app-color-overlay' + (this.props.userInterface.appIsBlurred ? ' app-color-overlay-visible' : ' app-color-overlay-invisible')}></div>
           </div>
         </div>
