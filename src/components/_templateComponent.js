@@ -1,22 +1,16 @@
-import React from 'react';
-import ExtraComponent from './components/ExtraComponent';
-import { functions } from './util/util.js'
 
-class AnotherComponent extends React.Component {
+class A extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
+    this.state = {
+
+    }
   }
   render() {
     return (
-      <div className="extraComponentContainer">
-        <ExtraComponent />
-      </div>
-    );
+      <div />
+    )
   }
 }
 
-const mapStateToProps = (state) => {
-  return state;
-}
-
-export default connect(mapStateToProps)(AnotherComponent);
+export default connect(state)(A)

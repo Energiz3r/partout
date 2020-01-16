@@ -1,18 +1,17 @@
-import { createStore, combineReducers } from 'redux';
-import userInterfaceReducer from '../reducers/userInterfaceReducer';
-import loginReducer from '../reducers/loginReducer';
-import { buildForDev } from '../config';
-import {
-  setUIState,
-  initLoginState,
-} from '../actions/actions';
+import { createStore, combineReducers } from 'redux'
+import UIReducer from '../reducers/userInterfaceReducer'
+import loginReducer from '../reducers/loginReducer'
+import { buildForDev } from '../config'
+import { initLoginState } from '../actions/loginActions'
+import { initUIState } from '../actions/UIActions';
+
 
 //CREATE STORE
 const configureStore = () => {
 
   const reducers = {
-    userInterface: userInterfaceReducer,
-    loginState: loginReducer
+    UI: UIReducer,
+    login: loginReducer
   };
   
   if (buildForDev) {
@@ -28,6 +27,6 @@ const configureStore = () => {
 export const store = configureStore();
 
 // populate the state with default values
-store.dispatch(setUIState());
+store.dispatch(initUIState());
 store.dispatch(initLoginState());
 

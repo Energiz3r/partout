@@ -1,9 +1,9 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { setLoggedIn } from '../actions/actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { setLoggedIn } from '../actions/loginActions'
 import { setAppReady } from '../utils/setAppState'
-import LoginUserForm from './LoginForm';
-import LoginCreateForm from './LoginCreateForm';
+import LoginUserForm from './LoginForm'
+import LoginCreateForm from './LoginCreateForm'
 
 import { FadeTransform } from 'react-animation-components'
 

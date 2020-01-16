@@ -20,7 +20,7 @@
 .app-color-overlay-visible {
   transition: opacity 1000ms linear;
   visibility: visible;
-  opacity: 1;
+  opacity: 0.1;
 }
 .app-color-overlay-invisible {
   transition: visibility 1000ms linear, opacity 1000ms linear;
