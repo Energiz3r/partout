@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "8fd1e3e99bf10364493d";
+/******/ 	var hotCurrentHash = "40eb14bb631213ee1b7f";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1892,7 +1892,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "/*\n\nSee ./utils/styleInfo.js where the fonts and colors are defined\nGoogle fonts installed:\n\nfont-family: 'Kavivanar', cursive;\nfont-family: 'Tajawal', sans-serif;\nfont-family: 'Source Sans Pro', sans-serif;\nfont-family: 'Indie Flower', cursive;\nfont-family: 'Inconsolata', monospace;\nfont-family: 'Dosis', sans-serif;\nfont-family: 'Quicksand', sans-serif;\nfont-family: 'Josefin Sans', sans-serif;\nfont-family: 'Abel', sans-serif;\nfont-family: 'Dancing Script', cursive;\nfont-family: 'Exo', sans-serif;\nfont-family: 'Kanit', sans-serif;\nfont-family: 'Ropa Sans', sans-serif;\nfont-family: 'Courgette', cursive;\nfont-family: 'Permanent Marker', cursive;\nfont-family: 'Orbitron', sans-serif;\nfont-family: 'Concert One', cursive;\nfont-family: 'Fredoka One', cursive;\nfont-family: 'Luckiest Guy', cursive;\nfont-family: 'Jura', sans-serif;\nfont-family: 'Kalam', cursive;\nfont-family: 'Marck Script', cursive;\nfont-family: 'Audiowide', cursive;\nfont-family: 'VT323', monospace;\nfont-family: 'Architects Daughter', cursive;\n\n*/\nhtml {\n  font-size: 62.5%;\n  overflow: hidden;\n  zoom: 1; }\n\nbody {\n  font-size: 1.6rem;\n  color: #cdd7c5;\n  font-family: \"Source Sans Pro\", sans-serif; }\n\nhtml, body, #app {\n  height: 100%;\n  background-color: black; }\n\na {\n  font-weight: bold;\n  color: #a6c3ec;\n  cursor: pointer; }\n\n.a-light {\n  color: #262626; }\n\na:hover {\n  color: #518adb; }\n\n.p-light {\n  color: #262626; }\n\n.emphasised-container {\n  box-shadow: 0 0.1rem #4e4f52, inset 0 0.1rem 0.1rem #191919;\n  border-radius: 0.2rem;\n  background-color: #262626;\n  border: 0.1rem solid black; }\n\n.emphasised-container-light {\n  box-shadow: 0;\n  border-radius: 0;\n  background-color: white;\n  border: 0;\n  border-top: #518adb solid 0.2rem; }\n\n.noSupportContainer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #262626; }\n\n.noSupportContainer > h1 {\n  text-align: center; }\n\n.noSupportContainer > h2 {\n  text-align: center; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.button-default {\n  font-weight: bold;\n  font-size: 4rem;\n  padding: 1.5rem;\n  color: white;\n  background-color: #518adb;\n  border: 0;\n  border-bottom: 0.4rem solid #2b6ece;\n  margin: .8rem; }\n\n.button-default:disabled {\n  opacity: .5; }\n\n@media only screen and (max-width: 40rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; } }\n\n@media only screen and (max-height: 45rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; } }\n\n.checkbox-container {\n  display: inline;\n  position: relative;\n  margin-left: .2rem;\n  margin-bottom: 0rem;\n  cursor: pointer;\n  font-size: 2.2rem;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n/* Hide the browser's default checkbox */\n.checkbox-container input {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer; }\n\n.checkbox-checkmark {\n  position: absolute;\n  display: inline;\n  top: .6rem;\n  left: 0;\n  height: 2.5rem;\n  width: 2.5rem;\n  background-color: #eee; }\n\n/* On mouse-over, add a grey background color */\n.checkbox-container:hover input ~ .checkbox-checkmark {\n  background-color: #ccc; }\n\n/* When the checkbox is checked, add a blue background */\n.checkbox-container input:checked ~ .checkbox-checkmark {\n  background-color: #518adb; }\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkbox-checkmark:after {\n  content: \"\";\n  position: absolute;\n  display: none; }\n\n/* Show the checkmark when checked */\n.checkbox-container input:checked ~ .checkbox-checkmark:after {\n  display: inline; }\n\n/* Style the checkmark/indicator */\n.checkbox-container .checkbox-checkmark:after {\n  left: .9rem;\n  top: .5rem;\n  width: .5rem;\n  height: 1rem;\n  border: solid white;\n  border-width: 0 .3rem .3rem 0;\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg); }\n\n.modal-fade-out {\n  transform: translateY(-1.5rem);\n  opacity: 0;\n  transition: opacity 150ms linear, transform 150ms linear !important; }\n\n.modal-wrapper {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: -1.5rem;\n  z-index: 15;\n  -webkit-transition: width 2s;\n  /* Safari */\n  transition: width 2s; }\n\n.modal-outer-container {\n  width: 100vw;\n  max-width: 100rem;\n  display: flex; }\n\n.modal-inner-container {\n  flex-grow: 1;\n  margin: 5%;\n  background-color: #262626;\n  border-radius: .5rem;\n  box-shadow: 0 0 5rem 0.1rem #1d1d1d;\n  padding-bottom: 2rem; }\n\n@media only screen and (max-width: 40rem) {\n  .modal-inner-container {\n    margin: 0;\n    border-radius: 0; } }\n\n::-webkit-scrollbar {\n  width: .5rem;\n  z-index: 10; }\n\n::-webkit-scrollbar-track {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-track:hover {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-thumb {\n  background: #518adb; }\n\n::-webkit-scrollbar-thumb:hover {\n  background: #518adb; }\n\n.tab-container {\n  width: 100%;\n  height: 6rem;\n  display: flex; }\n\n.tab {\n  position: relative;\n  margin: .5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-grow: 1;\n  height: 100%;\n  background-color: #353638;\n  cursor: pointer; }\n\n.tab-light {\n  background-color: #e2e2e2; }\n\n@media only screen and (max-width: 40rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n@media only screen and (max-height: 45rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n.tab-selected {\n  color: #518adb;\n  background-color: #4e4f52; }\n\n.tab-selected-light {\n  color: #518adb;\n  background-color: #fcfcfc; }\n\n.tab-disabled {\n  color: #4e4f52; }\n\n.tab-disabled-light {\n  color: #fcfcfc; }\n\n/* Tooltip container */\n.tooltip {\n  position: relative;\n  display: inline-block; }\n\n/* Tooltip text */\n.tooltip .tooltiptext {\n  font-weight: normal;\n  visibility: hidden;\n  width: 120px;\n  background-color: #353638;\n  color: #fff;\n  text-align: center;\n  padding: .3rem 0;\n  border-radius: .2rem;\n  border: 0.1rem solid black;\n  /* Position the tooltip text */\n  position: absolute;\n  z-index: 1;\n  bottom: 125%;\n  left: 50%;\n  margin-left: -60px;\n  /* Fade in tooltip */\n  opacity: 0;\n  transition: opacity 0.3s; }\n\n/* Tooltip arrow */\n.tooltip .tooltiptext::after {\n  content: \"\";\n  position: absolute;\n  top: 100%;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: #353638 transparent transparent transparent; }\n\n/* Show the tooltip text when you mouse over the tooltip container */\n.tooltip:hover .tooltiptext {\n  visibility: visible;\n  opacity: 1; }\n\n.app-root-container {\n  width: 100%;\n  height: 100%;\n  background-color: #353638;\n  margin: 0; }\n\n.app-overlay-container {\n  display: flex;\n  height: 100%;\n  width: 100%; }\n\n.app-color-overlay {\n  position: absolute;\n  left: -5vw;\n  top: -5vh;\n  width: 110vw;\n  height: 110vh;\n  background-color: black; }\n\n.app-color-overlay-visible {\n  transition: opacity 1000ms linear;\n  visibility: visible;\n  opacity: 0.1; }\n\n.app-color-overlay-invisible {\n  transition: visibility 1000ms linear, opacity 1000ms linear;\n  visibility: hidden;\n  opacity: 0; }\n\n.blur-container {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0; }\n\n.blur-container {\n  -webkit-filter: blur(10px);\n  -moz-filter: blur(10px);\n  -o-filter: blur(10px);\n  -ms-filter: blur(10px);\n  filter: blur(10px); }\n\n.nickSetFailedReason {\n  margin: 0 0 .5rem 0;\n  text-align: center; }\n\n.login-option-container {\n  transform: translateY(-1.5rem); }\n\n.login-badges-container {\n  position: absolute;\n  right: 0;\n  top: 0;\n  font-size: 3rem; }\n\n.login-badges-container > i {\n  margin-top: .5rem;\n  margin-right: .7rem; }\n\n@media only screen and (max-width: 40rem) {\n  .login-badges-container {\n    display: none; } }\n\n.login-form-container {\n  text-align: center; }\n\n.terms-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1rem; }\n\n.terms-paragraph {\n  display: inline-block;\n  margin: 0 1rem 0 0;\n  padding: .5rem 0 0 0; }\n\n@media only screen and (max-width: 40rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n@media only screen and (max-height: 45rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n.terms-container-user {\n  justify-content: center; }\n\n.example-enter {\n  opacity: 0.01;\n  width: 0px; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  width: 100px;\n  transition: 700ms; }\n\n.example-leave {\n  opacity: 1;\n  width: 100px; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  width: 0px;\n  transition: 700ms; }\n\n.splash-modal-outer {\n  margin-left: auto;\n  margin-right: auto; }\n\n.splash-modal-inner {\n  text-align: center; }\n\n.terms-container-create {\n  justify-content: center; }\n", ""]);
+exports.push([module.i, "/*\n\nSee ./utils/styleInfo.js where the fonts and colors are defined\nGoogle fonts installed:\n\nfont-family: 'Kavivanar', cursive;\nfont-family: 'Tajawal', sans-serif;\nfont-family: 'Source Sans Pro', sans-serif;\nfont-family: 'Indie Flower', cursive;\nfont-family: 'Inconsolata', monospace;\nfont-family: 'Dosis', sans-serif;\nfont-family: 'Quicksand', sans-serif;\nfont-family: 'Josefin Sans', sans-serif;\nfont-family: 'Abel', sans-serif;\nfont-family: 'Dancing Script', cursive;\nfont-family: 'Exo', sans-serif;\nfont-family: 'Kanit', sans-serif;\nfont-family: 'Ropa Sans', sans-serif;\nfont-family: 'Courgette', cursive;\nfont-family: 'Permanent Marker', cursive;\nfont-family: 'Orbitron', sans-serif;\nfont-family: 'Concert One', cursive;\nfont-family: 'Fredoka One', cursive;\nfont-family: 'Luckiest Guy', cursive;\nfont-family: 'Jura', sans-serif;\nfont-family: 'Kalam', cursive;\nfont-family: 'Marck Script', cursive;\nfont-family: 'Audiowide', cursive;\nfont-family: 'VT323', monospace;\nfont-family: 'Architects Daughter', cursive;\n\n*/\nhtml {\n  font-size: 62.5%;\n  overflow: hidden;\n  zoom: 1; }\n\nbody {\n  font-size: 1.6rem;\n  color: #cdd7c5;\n  font-family: \"Source Sans Pro\", sans-serif; }\n\nhtml, body, #app {\n  height: 100%;\n  background-color: black; }\n\na {\n  font-weight: bold;\n  color: #a6c3ec;\n  cursor: pointer; }\n\n.a-light {\n  color: #262626; }\n\na:hover {\n  color: #518adb; }\n\n.p-light {\n  color: #262626; }\n\n.emphasised-container {\n  box-shadow: 0 0.1rem #4e4f52, inset 0 0.1rem 0.1rem #191919;\n  border-radius: 0.2rem;\n  background-color: #262626;\n  border: 0.1rem solid black; }\n\n.emphasised-container-light {\n  box-shadow: 0;\n  border-radius: 0;\n  background-color: white;\n  border: 0;\n  border-top: #518adb solid 0.2rem; }\n\n.noSupportContainer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #262626; }\n\n.noSupportContainer > h1 {\n  text-align: center; }\n\n.noSupportContainer > h2 {\n  text-align: center; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.button-default {\n  font-weight: bold;\n  font-size: 4rem;\n  padding: 1.5rem;\n  color: white;\n  background-color: #518adb;\n  border: 0;\n  border-bottom: 0.4rem solid #2b6ece;\n  margin: .8rem; }\n\n.button-default:disabled {\n  opacity: .5; }\n\n@media only screen and (max-width: 40rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; } }\n\n@media only screen and (max-height: 45rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; } }\n\n.checkbox-container {\n  display: inline;\n  position: relative;\n  margin-left: .2rem;\n  margin-bottom: 0rem;\n  cursor: pointer;\n  font-size: 2.2rem;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n/* Hide the browser's default checkbox */\n.checkbox-container input {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer; }\n\n.checkbox-checkmark {\n  position: absolute;\n  display: inline;\n  top: .6rem;\n  left: 0;\n  height: 2.5rem;\n  width: 2.5rem;\n  background-color: #eee; }\n\n/* On mouse-over, add a grey background color */\n.checkbox-container:hover input ~ .checkbox-checkmark {\n  background-color: #ccc; }\n\n/* When the checkbox is checked, add a blue background */\n.checkbox-container input:checked ~ .checkbox-checkmark {\n  background-color: #518adb; }\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkbox-checkmark:after {\n  content: \"\";\n  position: absolute;\n  display: none; }\n\n/* Show the checkmark when checked */\n.checkbox-container input:checked ~ .checkbox-checkmark:after {\n  display: inline; }\n\n/* Style the checkmark/indicator */\n.checkbox-container .checkbox-checkmark:after {\n  left: .9rem;\n  top: .5rem;\n  width: .5rem;\n  height: 1rem;\n  border: solid white;\n  border-width: 0 .3rem .3rem 0;\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg); }\n\n.modal-fade-out {\n  transform: translateY(-1.5rem);\n  opacity: 0;\n  transition: opacity 150ms linear, transform 150ms linear !important; }\n\n.modal-wrapper {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: -1.5rem;\n  -webkit-transition: width 2s;\n  /* Safari */\n  transition: width 2s; }\n\n.modal-outer-container {\n  width: 100vw;\n  max-width: 100rem;\n  display: flex; }\n\n.modal-inner-container {\n  flex-grow: 1;\n  margin: 5%;\n  background-color: #262626;\n  border-radius: .5rem;\n  box-shadow: 0 0 5rem 0.1rem #1d1d1d;\n  padding-bottom: 2rem; }\n\n@media only screen and (max-width: 40rem) {\n  .modal-inner-container {\n    margin: 0;\n    border-radius: 0; } }\n\n::-webkit-scrollbar {\n  width: .5rem;\n  z-index: 10; }\n\n::-webkit-scrollbar-track {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-track:hover {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-thumb {\n  background: #518adb; }\n\n::-webkit-scrollbar-thumb:hover {\n  background: #518adb; }\n\n.tab-container {\n  width: 100%;\n  height: 6rem;\n  display: flex; }\n\n.tab {\n  position: relative;\n  margin: .5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-grow: 1;\n  height: 100%;\n  background-color: #353638;\n  cursor: pointer; }\n\n.tab-light {\n  background-color: #e2e2e2; }\n\n@media only screen and (max-width: 40rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n@media only screen and (max-height: 45rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n.tab-selected {\n  color: #518adb;\n  background-color: #4e4f52; }\n\n.tab-selected-light {\n  color: #518adb;\n  background-color: #fcfcfc; }\n\n.tab-disabled {\n  color: #4e4f52; }\n\n.tab-disabled-light {\n  color: #fcfcfc; }\n\n/* Tooltip container */\n.tooltip {\n  position: relative;\n  display: inline-block; }\n\n/* Tooltip text */\n.tooltip .tooltiptext {\n  font-weight: normal;\n  visibility: hidden;\n  width: 120px;\n  background-color: #353638;\n  color: #fff;\n  text-align: center;\n  padding: .3rem 0;\n  border-radius: .2rem;\n  border: 0.1rem solid black;\n  /* Position the tooltip text */\n  position: absolute;\n  z-index: 1;\n  bottom: 125%;\n  left: 50%;\n  margin-left: -60px;\n  /* Fade in tooltip */\n  opacity: 0;\n  transition: opacity 0.3s; }\n\n/* Tooltip arrow */\n.tooltip .tooltiptext::after {\n  content: \"\";\n  position: absolute;\n  top: 100%;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: #353638 transparent transparent transparent; }\n\n/* Show the tooltip text when you mouse over the tooltip container */\n.tooltip:hover .tooltiptext {\n  visibility: visible;\n  opacity: 1; }\n\n.navbar-container {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%;\n  height: 20rem;\n  left: 0;\n  top: 0;\n  background-color: red; }\n\n.app-root-container {\n  width: 100%;\n  height: 100%;\n  background-color: #353638;\n  margin: 0; }\n\n.app-overlay-container {\n  display: flex;\n  height: 100%;\n  width: 100%; }\n\n.app-color-overlay {\n  position: absolute;\n  left: -5vw;\n  top: -5vh;\n  width: 110vw;\n  height: 110vh;\n  background-color: black; }\n\n.app-color-overlay-visible {\n  transition: opacity 1000ms linear;\n  visibility: visible;\n  opacity: 0.1; }\n\n.app-color-overlay-invisible {\n  transition: visibility 1000ms linear, opacity 1000ms linear;\n  visibility: hidden;\n  opacity: 0; }\n\n.blur-container {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0; }\n\n.blur-container {\n  -webkit-filter: blur(10px);\n  -moz-filter: blur(10px);\n  -o-filter: blur(10px);\n  -ms-filter: blur(10px);\n  filter: blur(10px); }\n\n.nickSetFailedReason {\n  margin: 0 0 .5rem 0;\n  text-align: center; }\n\n.login-option-container {\n  transform: translateY(-1.5rem); }\n\n.login-badges-container {\n  position: absolute;\n  right: 0;\n  top: 0;\n  font-size: 3rem; }\n\n.login-badges-container > i {\n  margin-top: .5rem;\n  margin-right: .7rem; }\n\n@media only screen and (max-width: 40rem) {\n  .login-badges-container {\n    display: none; } }\n\n.login-form-container {\n  text-align: center; }\n\n.terms-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1rem; }\n\n.terms-paragraph {\n  display: inline-block;\n  margin: 0 1rem 0 0;\n  padding: .5rem 0 0 0; }\n\n@media only screen and (max-width: 40rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n@media only screen and (max-height: 45rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n.terms-container-user {\n  justify-content: center; }\n\n.example-enter {\n  opacity: 0.01;\n  width: 0px; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  width: 100px;\n  transition: 700ms; }\n\n.example-leave {\n  opacity: 1;\n  width: 100px; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  width: 0px;\n  transition: 700ms; }\n\n.splash-modal-outer {\n  margin-left: auto;\n  margin-right: auto; }\n\n.splash-modal-inner {\n  text-align: center; }\n\n.terms-container-create {\n  justify-content: center; }\n", ""]);
 
 // exports
 
@@ -32165,6 +32165,8 @@ var _login = __webpack_require__(/*! ./utils/login.js */ "./src/utils/login.js")
 
 var _store = __webpack_require__(/*! ./stores/store */ "./src/stores/store.js");
 
+var _config = __webpack_require__(/*! ./config */ "./src/config.js");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32173,19 +32175,23 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: '750335742141550',
-    cookie: true, // enable cookies to allow the server to access the session
-    xfbml: false,
-    status: true,
-    oauth: true,
-    version: 'v3.2'
-  });
-  FB.Event.subscribe('auth.statusChange', function (response) {
-    (0, _login.facebookCallback)(response);
-  });
-}.bind(undefined);
+if (!_config.webpackDevServer) {
+  window.fbAsyncInit = function () {
+    FB.init({
+      appId: '750335742141550',
+      cookie: true, // enable cookies to allow the server to access the session
+      xfbml: false,
+      status: true,
+      oauth: true,
+      version: 'v3.2'
+    });
+    FB.Event.subscribe('auth.statusChange', function (response) {
+      (0, _login.facebookCallback)(response);
+    });
+  }.bind(undefined);
+} else {
+  (0, _login.dummyLogin)();
+}
 
 // browser detection
 //var isOpera = (!!window.opr && !!opr.addons) || !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0; // Opera 8.0+
@@ -32334,7 +32340,7 @@ var AppMain = function (_React$Component) {
           React.createElement(
             'div',
             { className: "app-overlay-container" + (appIsBlurred || !loggedIn ? " blur-container" : "") },
-            React.createElement(_Home2.default, null),
+            loggedIn && React.createElement(_Home2.default, null),
             React.createElement('div', { className: 'app-color-overlay' + (appIsBlurred || !loggedIn ? ' app-color-overlay-visible' : ' app-color-overlay-invisible') })
           )
         )
@@ -32363,7 +32369,7 @@ exports.default = (0, _reactRedux.connect)(function (state) {
 /* WEBPACK VAR INJECTION */(function(React) {
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -32377,37 +32383,38 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var Home = function (_React$Component) {
-    _inherits(Home, _React$Component);
+  _inherits(Home, _React$Component);
 
-    function Home(props) {
-        _classCallCheck(this, Home);
+  function Home(props) {
+    _classCallCheck(this, Home);
 
-        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this, props));
 
-        _this.state = {};
-        return _this;
+    _this.state = {};
+    return _this;
+  }
+
+  _createClass(Home, [{
+    key: "render",
+    value: function render() {
+      return React.createElement(
+        "div",
+        null,
+        React.createElement("div", { className: "navbar-container" }),
+        React.createElement(
+          "p",
+          null,
+          "Home Page"
+        )
+      );
     }
+  }]);
 
-    _createClass(Home, [{
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement(
-                    'p',
-                    null,
-                    'Home Page'
-                )
-            );
-        }
-    }]);
-
-    return Home;
+  return Home;
 }(React.Component);
 
 exports.default = (0, _reactRedux.connect)(function (state) {
-    return state;
+  return state;
 })(Home);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! react */ "./node_modules/react/react.js")))
 
@@ -32531,6 +32538,8 @@ var serverAddress = exports.serverAddress = 'https://noobs.wtf/partout/api.php';
 
 //set to false for production
 var buildForDev = exports.buildForDev = true;
+
+var webpackDevServer = exports.webpackDevServer = true;
 
 /***/ }),
 
@@ -32721,7 +32730,7 @@ if(true) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.facebookCallback = undefined;
+exports.dummyLogin = exports.facebookCallback = undefined;
 
 var _store = __webpack_require__(/*! ../stores/store */ "./src/stores/store.js");
 
@@ -32806,6 +32815,16 @@ var facebookCallback = exports.facebookCallback = function facebookCallback(resp
     _store.store.dispatch((0, _loginActions.setLoginStatusPartout)(false));
   }
   return false;
+};
+
+var dummyLogin = exports.dummyLogin = function dummyLogin() {
+  setTimeout(function () {
+    _store.store.dispatch((0, _loginActions.setLoginStatusFacebook)(true));
+    _store.store.dispatch((0, _loginActions.setLoginStatusPartout)(true));
+  }, 800);
+  setTimeout(function () {
+    _store.store.dispatch((0, _loginActions.setLoginStatus)(true)); // delay the login so the login modal can fade out
+  }, 1200);
 };
 
 /***/ })
