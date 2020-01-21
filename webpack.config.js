@@ -4,8 +4,9 @@ const webpack = require('webpack');
 module.exports = {
   entry: './src/app.js',
   output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js'
+    path: path.join(__dirname, 'server'),
+    filename: 'bundle.js',
+    publicPath: '/'
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -30,6 +31,9 @@ module.exports = {
   },
   devtool: 'source-map',
   devServer: {
-    contentBase: path.join(__dirname, 'public')
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: {
+      index: '/'
+    }
   }
 };

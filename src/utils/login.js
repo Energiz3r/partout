@@ -3,15 +3,15 @@ import {
   setLoginStatusFacebook,
   setLoginStatusPartout,
   setLoginStatus
-} from '../actions/loginActions';
+} from '../actions/loginActions'
+import { setRoute } from '../actions/UIActions'
+import {serverAPILocation} from '../config'
   
 if (!window.serverData) { window.serverData = {} }
 
-
-
 const partOutLoginRequest = () => {
   //console.log("Logging into to Partout...")
-  fetch("api.php", {
+  fetch(serverAPILocation, {
     method: 'POST',
     cache: 'no-cache',
     headers: {
@@ -27,10 +27,11 @@ const partOutLoginRequest = () => {
       (result) => {
         if (result.loggedIn === "1") {
           //console.log(result)
-          //console.log("Partout auth successful!")
+          console.log("Partout auth successful!")
           store.dispatch(setLoginStatusPartout(true))
           setTimeout(()=>{
             store.dispatch(setLoginStatus(true)) // delay the login so the login modal can fade out
+            store.dispatch(setRoute('/home'))
           }, 200)
         } else {
           console.log("Partout auth failed:")
@@ -45,7 +46,7 @@ const partOutLoginRequest = () => {
 }
 const facebookLoginCheck = (fbResponse) => {
   //console.log("Checking facebook auth with Partout...")
-  fetch("api.php", {
+  fetch(serverAPILocation, {
     method: 'POST',
     cache: 'no-cache',
     headers: {
@@ -76,14 +77,15 @@ const facebookLoginCheck = (fbResponse) => {
 }
 
 export const facebookCallback = (response) => {
-  //console.log("Facebook auth response received...")
-  //console.log(response)
+  console.log("Facebook auth response received...")
+  console.log(response)
   if (response.status == 'connected') {
     setTimeout(()=>{
       store.dispatch(setLoginStatusFacebook(true))
       facebookLoginCheck(response.authResponse)
     },1000)
   } else {
+    console.log(response)
     store.dispatch(setLoginStatusFacebook(false))
     store.dispatch(setLoginStatusPartout(false))
   }
@@ -94,8 +96,11 @@ export const dummyLogin = () => {
   setTimeout(()=>{
     store.dispatch(setLoginStatusFacebook(true))
     store.dispatch(setLoginStatusPartout(true))
+    console.log("Logging in... (dummy mode)")
   }, 800)
   setTimeout(()=>{
+    console.log("Logged in! (dummy mode)")
     store.dispatch(setLoginStatus(true)) // delay the login so the login modal can fade out
+    store.dispatch(setRoute('/home'))
   }, 1200)
 }

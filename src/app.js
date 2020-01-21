@@ -5,6 +5,7 @@ import AppMain from './components/AppMain'
 import { facebookCallback, dummyLogin } from './utils/login.js'
 import { store } from './stores/store'
 import { webpackDevServer } from './config'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 if (!webpackDevServer) {
   window.fbAsyncInit = function() {
@@ -51,7 +52,9 @@ class ApplicationBase extends React.Component {
     if (displayMode == 'app') {
       return (
         <Provider store={store}>
-          <AppMain />
+          <Router>            
+            <AppMain />
+          </Router>
         </Provider>
       )
     } else if (displayMode == 'IE') {

@@ -1,4 +1,4 @@
-
+import { connect } from 'react-redux'
 class A extends React.Component {
   constructor(props) {
     super(props)
@@ -13,4 +13,4 @@ class A extends React.Component {
   }
 }
 
-export default connect(state)(A)
+export default connect(state=>state)(A)

@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux'
-import UIReducer from '../reducers/userInterfaceReducer'
+import UIReducer from '../reducers/UIReducer'
 import loginReducer from '../reducers/loginReducer'
 import { buildForDev } from '../config'
 import { initLoginState } from '../actions/loginActions'

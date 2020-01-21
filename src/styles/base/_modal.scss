@@ -13,7 +13,7 @@
   height: 100%;
   left: 0;
   top: -1.5rem;
-  //z-index: 15; //required because there is z-indexing for the proper display of user/channel list collapse buttons
+  z-index: 15; //required because there is z-indexing for the proper display of user/channel list collapse buttons
   -webkit-transition: width 2s; /* Safari */
   transition: width 2s;
 }

@@ -14,6 +14,11 @@ export default (state = reducerDefaultState, action) => {
         ...state,
         loggedInPartout: action.status 
       }
+    case 'SET_LOGIN_STATUS':
+        return {
+          ...state,
+          loggedIn: action.status 
+        }
     default:
       return state
   }

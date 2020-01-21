@@ -1,5 +1,6 @@
 import { connect } from 'react-redux'
 import { FadeTransform } from 'react-animation-components'
+import { webpackDevServer } from '../config'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class LoginForm extends React.Component {
 
                 {loggedInFacebook && !loggedInPartout && <p>Logging in...</p>}
 
-                {!loggedInFacebook && 
+                {(!loggedInFacebook && !webpackDevServer) && 
                   <div
                     className="fb-login-button"
                     data-width=""
