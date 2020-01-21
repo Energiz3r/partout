@@ -13,7 +13,7 @@ class Navbar extends React.Component {
     return (
       <div className="navbar-container">
         <button onClick={this.onMenuClick} className='button-default navbar-button navbar-burger-button'><i className="fas fa-bars fa-navbar"></i></button>
-        <h2>App</h2>
+        <h2>Partout</h2>
       </div>
     )
   }

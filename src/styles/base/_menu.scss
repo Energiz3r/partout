@@ -25,6 +25,14 @@
   width: 4rem;
 }
 
+@media only screen and (max-width: 1200px) {
+  .menu-button{
+    font-size: $s-size;
+  }
+  .menu-container {
+    width: 25%;
+  }
+}
 @media only screen and (max-width: $width-breakpoint) {
   .menu-button{
     font-size: $s-size;

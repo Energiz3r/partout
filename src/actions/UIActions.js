@@ -20,7 +20,7 @@ export const initUIState = (
 
 export const setRoute = (route, relative = false) => ({
   type: 'SET_ROUTE',
-  route: !relative ? serverLocation + route : route
+  route: relative ? route : (serverLocation + route)
 })
 export const setInitialRoute = (route) => ({
   type: 'SET_INITIAL_ROUTE',
