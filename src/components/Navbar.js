@@ -14,6 +14,7 @@ class Navbar extends React.Component {
       <div className="navbar-container">
         <button onClick={this.onMenuClick} className='button-default navbar-button navbar-burger-button'><i className="fas fa-bars fa-navbar"></i></button>
         <h2>Partout</h2>
+        <h4 className='navbar-name'>{this.props.login.name}</h4>
       </div>
     )
   }

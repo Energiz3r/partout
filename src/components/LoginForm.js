@@ -1,15 +1,77 @@
 import { connect } from 'react-redux'
 import { FadeTransform } from 'react-animation-components'
-import { webpackDevServer } from '../config'
+import { webpackDevServer, serverAPILocation } from '../config'
+import { setRoute } from '../actions/UIActions'
+import { setLoginStatus, setLoginStatusPartout, setUserDetails } from '../actions/loginActions'
 
 class LoginForm extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      termsAccepted: false,
+      awaitingCreateResponse: false,
+      email
     }
   }
+  onAcceptTerms = () => {
+    console.log("terms accept")
+    this.setState({
+      ...this.state,
+      termsAccepted: !this.state.termsAccepted
+    })
+  }
+  onCreateAccount = () => {
+    console.log("Creating login...")
+    this.setState({
+      ...this.state,
+      awaitingCreateResponse: true
+    })
+    fetch(serverAPILocation, {
+      method: 'POST',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        "action": "createPartoutUser"
+      })
+    })
+      //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
+      .then(result => result.json())
+      .then(
+        (result) => {
+          if (result.loggedIn === "1") {
+            console.log(result)
+            this.props.dispatch(setUserDetails(result))
+            this.props.dispatch(setLoginStatusPartout(true))
+            setTimeout(()=>{
+              this.props.dispatch(setLoginStatus(true)) // delay the login so the login modal can fade out
+              this.props.dispatch(setRoute('/home'))
+            }, 1000)
+          } else {
+            console.log("Failed create account:")
+            console.log(result)
+          }
+        },
+        (error) => {
+          console.log("Error:")
+          console.log(error)
+        }
+      )
+  }
   render() {
-    const { loggedInFacebook, loggedInPartout } = this.props.login
+    const {
+      loggedInFacebook,
+      loggedInPartout,
+      createAccount,
+      responseErrorMessage,
+      email,
+      name
+    } = this.props.login
+    const { 
+      awaitingCreateResponse,
+      termsAccepted
+    } = this.state
     return (
 
       <div className={"modal-wrapper" + ((loggedInFacebook && loggedInPartout) ? ' modal-fade-out' : "")}>
@@ -19,9 +81,9 @@ class LoginForm extends React.Component {
 
               <div className="login-form-container">
 
-                <h4>Welcome to PartOut!</h4>
+                <h2>Welcome to PartOut!</h2>
 
-                {loggedInFacebook && !loggedInPartout && <p>Logging in...</p>}
+                {loggedInFacebook && !loggedInPartout && !createAccount && <p>Logging in...</p>}
 
                 {(!loggedInFacebook && !webpackDevServer) && 
                   <div
@@ -35,7 +97,34 @@ class LoginForm extends React.Component {
                   </div>
                 }
 
-                {!loggedInFacebook && <p>Please log in using Facebook to continue. We do not receive or store any of your personal or profile information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information or use it for any other purpose except with your express permission.</p> }
+                {createAccount && <div className="login-create-container">
+                  <p>Please accept the terms and click Confirm to finish setting up your account</p>
+                  <label className='login-create-label'>Name:</label>
+                  <input type="text" className='login-create-textinput' value={name} disabled></input>
+                  <label className='login-create-label'>Email:</label>
+                  <input type="email" className='login-create-textinput' value={email} placeholder="eg: user@mail.com" disabled={email == ''}></input>
+                  <div className="terms-container">
+                    <p className={"terms-paragraph"}>
+                      Accept <a href='/terms.html'>terms and conditions</a>?
+                    </p>
+                    <label className="checkbox-container">
+                      <input
+                        type="checkbox"
+                        checked={termsAccepted ? "checked" : ''}
+                        onChange={this.onAcceptTerms}
+                      />
+                      <span className="checkbox-checkmark"></span>
+                    </label>
+                  </div>
+                  <button onClick={this.onCreateAccount} className='button-default' disabled={!termsAccepted || awaitingCreateResponse || email == ''}>
+                    {awaitingCreateResponse ? <span className="fa fa-spinner fa-spin"></span> : "Confirm"}
+                  </button>
+                </div>}
+
+                {responseErrorMessage != '' && <p className='login-error-text'>{responseErrorMessage}</p>}
+
+                {!loggedInFacebook && <p className='modal-large-text'>Please log in using Facebook to continue.</p> }
+                {!loggedInFacebook && <p className='modal-disclaimer-text'>We do not store any of your personal information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information with anyone or use it for any other purpose except with your express permission.</p> }
 
               </div>
 

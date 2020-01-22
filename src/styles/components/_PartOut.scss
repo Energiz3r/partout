@@ -17,3 +17,9 @@
   height: 100%;
   padding: 2rem;
 }
+
+@media only screen and (max-width: $width-breakpoint) {
+  .main-content-container {
+    width: auto;
+  }  
+}

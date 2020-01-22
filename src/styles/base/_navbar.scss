@@ -18,28 +18,41 @@
 }
 
 .fa-navbar {
-  margin-right: .4rem;
+  //font-size: $m-size;
 }
 
 .navbar-button{
   min-height: 3rem;
   font-size: $m-size;
+  padding: 0;
 }
 
 .navbar-burger-button {
   width: 4rem;
 }
 
+.navbar-name {
+  float: right;
+  position: absolute;
+  right: 2rem;
+}
+
 @media only screen and (max-width: $width-breakpoint) {
   .navbar-button{
-    font-size: $s-size;
+    font-size: $l-size;
   }
   .navbar-container {
-    //width: 55%;
+    height: 8rem;
+  }
+  .navbar-container > h2 {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-size: $l-size;
+  }
+  .navbar-burger-button {
+    width: 6rem;
   }
 }
 @media only screen and (max-height: $height-breakpoint) {
-  .navbar-button{
-    font-size: $s-size;
-  }
+
 }

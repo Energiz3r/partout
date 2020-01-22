@@ -17,8 +17,26 @@ export default (state = reducerDefaultState, action) => {
     case 'SET_LOGIN_STATUS':
         return {
           ...state,
-          loggedIn: action.status 
+          loggedIn: action.status,
+          createAccount: action.status ? false : state.createAccount,
+          responseErrorMessage: action.status ? '' : state.responseErrorMessage
         }
+    case 'SET_CREATE_ACCOUNT':
+      return {
+        ...state,
+        createAccount: true
+      }
+    case 'SET_RESPONSE_ERROR_MESSAGE':
+      return {
+        ...state,
+        responseErrorMessage: action.message
+      }
+    case 'SET_USER_DETAILS':
+      return {
+        ...state,
+        email: action.details.email,
+        name: action.details.name
+      }
     default:
       return state
   }

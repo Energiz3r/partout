@@ -2,10 +2,12 @@ import { store } from '../stores/store'
 import {
   setLoginStatusFacebook,
   setLoginStatusPartout,
-  setLoginStatus
+  setLoginStatus,
+  setCreateAccount,
+  setUserDetails
 } from '../actions/loginActions'
 import { setRoute } from '../actions/UIActions'
-import {serverAPILocation} from '../config'
+import {serverAPILocation,stopAtLoginResponse, simulateCreateAccount} from '../config'
   
 if (!window.serverData) { window.serverData = {} }
 
@@ -34,8 +36,15 @@ const partOutLoginRequest = () => {
             store.dispatch(setRoute('/home'))
           }, 200)
         } else {
-          console.log("Partout auth failed:")
           console.log(result)
+          if (result.reason == 'no_partout_user') {
+            store.dispatch(setCreateAccount())
+          } else if (result.reason == 'no_facebook_session') {
+            store.dispatch(setResponseErrorMessage("Invalid facebook session! Please refresh the page and try again."))
+          } else {
+            console.log("Partout auth failed for some reason. Response:")
+            console.log(result)
+          }          
         }
       },
       (error) => {
@@ -62,6 +71,8 @@ const facebookLoginCheck = (fbResponse) => {
     .then(
       (result) => {
         if (result.loggedIn === "1") {
+          console.log(result)
+          store.dispatch(setUserDetails(result))
           partOutLoginRequest()
           //console.log("Partout accepted facebook auth!")
         } else {
@@ -79,28 +90,37 @@ const facebookLoginCheck = (fbResponse) => {
 export const facebookCallback = (response) => {
   console.log("Facebook auth response received...")
   console.log(response)
-  if (response.status == 'connected') {
-    setTimeout(()=>{
-      store.dispatch(setLoginStatusFacebook(true))
-      facebookLoginCheck(response.authResponse)
-    },1000)
-  } else {
-    console.log(response)
-    store.dispatch(setLoginStatusFacebook(false))
-    store.dispatch(setLoginStatusPartout(false))
-  }
+  if (!store.getState().login.loggedIn) {
+    if (response.status == 'connected') {
+      setTimeout(()=>{
+        store.dispatch(setLoginStatusFacebook(true))
+        facebookLoginCheck(response.authResponse)
+      },1000)
+    } else {
+      console.log(response)
+      store.dispatch(setLoginStatusFacebook(false))
+      store.dispatch(setLoginStatusPartout(false))
+    }
+  }  
   return false
 }
 
 export const dummyLogin = () => {
   setTimeout(()=>{
     store.dispatch(setLoginStatusFacebook(true))
-    store.dispatch(setLoginStatusPartout(true))
+    if (!stopAtLoginResponse) {
+      store.dispatch(setLoginStatusPartout(true))
+    }
+    if (simulateCreateAccount) {
+      store.dispatch(setCreateAccount())
+    }
     console.log("Logging in... (dummy mode)")
   }, 800)
-  setTimeout(()=>{
-    console.log("Logged in! (dummy mode)")
-    store.dispatch(setLoginStatus(true)) // delay the login so the login modal can fade out
-    store.dispatch(setRoute('/home'))
-  }, 1200)
+  if (!stopAtLoginResponse) {
+    setTimeout(()=>{
+      console.log("Logged in! (dummy mode)")
+      store.dispatch(setLoginStatus(true)) // delay the login so the login modal can fade out
+      store.dispatch(setRoute('/home'))
+    }, 1200)
+  }
 }

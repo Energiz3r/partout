@@ -1,15 +1,25 @@
+import { buildForDev } from '../config'
+
 export const initLoginState = (
   {
     loggedInFacebook = false,
     loggedInPartout = false,
-    loggedIn = false
+    createAccount = false,
+    responseErrorMessage = '',
+    loggedIn = false,
+    email = '',
+    name = buildForDev ? 'Tim Eastwood' : ''
   } = {}
 ) => ({
   type: 'INIT_LOGIN_STATE',
   loginState: {
     loggedInFacebook,
     loggedInPartout,
-    loggedIn
+    createAccount,
+    responseErrorMessage,
+    loggedIn,
+    email,
+    name
   }
 })
   
@@ -25,4 +35,16 @@ export const setLoginStatusPartout = (status) => ({
 export const setLoginStatus = (status) => ({
   type: 'SET_LOGIN_STATUS',
   status
+})
+
+export const setCreateAccount = () => ({
+  type: 'SET_CREATE_ACCOUNT'
+})
+export const setResponseErrorMessage = (message) => ({
+  type: 'SET_RESPONSE_ERROR_MESSAGE',
+  message
+})
+export const setUserDetails = (details) => ({
+  type: 'SET_USER_DETAILS',
+  details
 })

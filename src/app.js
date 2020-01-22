@@ -4,7 +4,7 @@ import './styles/styles.scss'
 import AppMain from './components/AppMain'
 import { facebookCallback, dummyLogin } from './utils/login.js'
 import { store } from './stores/store'
-import { webpackDevServer } from './config'
+import { webpackDevServer, useDummyLogin } from './config'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 if (!webpackDevServer) {
@@ -22,7 +22,9 @@ if (!webpackDevServer) {
     })
   }.bind(this)
 } else {
-  dummyLogin()
+  if (useDummyLogin) {
+    dummyLogin()
+  }
 }
 
 

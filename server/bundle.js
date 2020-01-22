@@ -63,7 +63,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "c92effbab8e91de04d96";
+/******/ 	var hotCurrentHash = "1275227d998ffdaf4dcb";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1892,7 +1892,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "html {\n  font-size: 62.5%;\n  overflow: hidden;\n  zoom: 1; }\n\nbody {\n  font-size: 1.6rem;\n  color: #cdd7c5;\n  font-family: \"Source Sans Pro\", sans-serif; }\n\nhtml, body, #app {\n  height: 100%;\n  background-color: black; }\n\na {\n  font-weight: bold;\n  color: #a6c3ec;\n  cursor: pointer; }\n\n.a-light {\n  color: #262626; }\n\na:hover {\n  color: #518adb; }\n\n.p-light {\n  color: #262626; }\n\n.emphasised-container {\n  box-shadow: 0 0.1rem #4e4f52, inset 0 0.1rem 0.1rem #191919;\n  border-radius: 0.2rem;\n  background-color: #262626;\n  border: 0.1rem solid black; }\n\n.emphasised-container-light {\n  box-shadow: 0;\n  border-radius: 0;\n  background-color: white;\n  border: 0;\n  border-top: #518adb solid 0.2rem; }\n\n.app-root-container {\n  width: 100%;\n  height: 100%;\n  background-color: #353638;\n  margin: 0; }\n\n.app-overlay-container {\n  display: flex;\n  height: 100%;\n  width: 100%; }\n\n.app-color-overlay {\n  position: absolute;\n  left: -5vw;\n  top: -5vh;\n  width: 110vw;\n  height: 110vh;\n  background-color: black; }\n\n.app-color-overlay-visible {\n  transition: opacity 1000ms linear;\n  visibility: visible;\n  opacity: 0.1; }\n\n.app-color-overlay-invisible {\n  transition: visibility 1000ms linear, opacity 1000ms linear;\n  visibility: hidden;\n  opacity: 0; }\n\n.blur-container {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0; }\n\n.blur-container {\n  -webkit-filter: blur(10px);\n  -moz-filter: blur(10px);\n  -o-filter: blur(10px);\n  -ms-filter: blur(10px);\n  filter: blur(10px); }\n\n.noSupportContainer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #262626; }\n\n.noSupportContainer > h1 {\n  text-align: center; }\n\n.noSupportContainer > h2 {\n  text-align: center; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.button-default {\n  font-size: 4rem;\n  padding: 1.5rem;\n  color: white;\n  background-color: #518adb;\n  border: 0;\n  border-bottom: 0.4rem solid #2b6ece;\n  margin: .8rem; }\n\n.button-default:disabled {\n  opacity: .5; }\n\n.button-good {\n  background-color: #009400;\n  border-bottom: 0.4rem solid #006100; }\n\n.button-ok {\n  background-color: #dd7d00;\n  border-bottom: 0.4rem solid #aa6000; }\n\n.button-bad {\n  background-color: #a70000;\n  border-bottom: 0.4rem solid #740000; }\n\n@media only screen and (max-width: 40rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; }\n  .button-good {\n    border-bottom: 0.2rem solid #006100; }\n  .button-ok {\n    border-bottom: 0.2rem solid #aa6000; }\n  .button-bad {\n    border-bottom: 0.2rem solid #740000; } }\n\n@media only screen and (max-height: 45rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; }\n  .button-good {\n    border-bottom: 0.2rem solid #006100; }\n  .button-ok {\n    border-bottom: 0.2rem solid #aa6000; }\n  .button-bad {\n    border-bottom: 0.2rem solid #740000; } }\n\n.checkbox-container {\n  display: inline;\n  position: relative;\n  margin-left: .2rem;\n  margin-bottom: 0rem;\n  cursor: pointer;\n  font-size: 2.2rem;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n/* Hide the browser's default checkbox */\n.checkbox-container input {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer; }\n\n.checkbox-checkmark {\n  position: absolute;\n  display: inline;\n  top: .6rem;\n  left: 0;\n  height: 2.5rem;\n  width: 2.5rem;\n  background-color: #eee; }\n\n/* On mouse-over, add a grey background color */\n.checkbox-container:hover input ~ .checkbox-checkmark {\n  background-color: #ccc; }\n\n/* When the checkbox is checked, add a blue background */\n.checkbox-container input:checked ~ .checkbox-checkmark {\n  background-color: #518adb; }\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkbox-checkmark:after {\n  content: \"\";\n  position: absolute;\n  display: none; }\n\n/* Show the checkmark when checked */\n.checkbox-container input:checked ~ .checkbox-checkmark:after {\n  display: inline; }\n\n/* Style the checkmark/indicator */\n.checkbox-container .checkbox-checkmark:after {\n  left: .9rem;\n  top: .5rem;\n  width: .5rem;\n  height: 1rem;\n  border: solid white;\n  border-width: 0 .3rem .3rem 0;\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg); }\n\n.modal-fade-out {\n  transform: translateY(-1.5rem);\n  opacity: 0;\n  transition: opacity 150ms linear, transform 150ms linear !important; }\n\n.modal-wrapper {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: -1.5rem;\n  z-index: 15;\n  -webkit-transition: width 2s;\n  /* Safari */\n  transition: width 2s; }\n\n.modal-outer-container {\n  width: 100vw;\n  max-width: 100rem;\n  display: flex; }\n\n.modal-inner-container {\n  flex-grow: 1;\n  margin: 5%;\n  background-color: #262626;\n  border-radius: .5rem;\n  box-shadow: 0 0 5rem 0.1rem #1d1d1d;\n  padding-bottom: 2rem; }\n\n@media only screen and (max-width: 40rem) {\n  .modal-inner-container {\n    margin: 0;\n    border-radius: 0; } }\n\n::-webkit-scrollbar {\n  width: .5rem;\n  z-index: 10; }\n\n::-webkit-scrollbar-track {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-track:hover {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-thumb {\n  background: #518adb; }\n\n::-webkit-scrollbar-thumb:hover {\n  background: #518adb; }\n\n.tab-container {\n  width: 100%;\n  height: 6rem;\n  display: flex; }\n\n.tab {\n  position: relative;\n  margin: .5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-grow: 1;\n  height: 100%;\n  background-color: #353638;\n  cursor: pointer; }\n\n.tab-light {\n  background-color: #e2e2e2; }\n\n@media only screen and (max-width: 40rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n@media only screen and (max-height: 45rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n.tab-selected {\n  color: #518adb;\n  background-color: #4e4f52; }\n\n.tab-selected-light {\n  color: #518adb;\n  background-color: #fcfcfc; }\n\n.tab-disabled {\n  color: #4e4f52; }\n\n.tab-disabled-light {\n  color: #fcfcfc; }\n\n/* Tooltip container */\n.tooltip {\n  position: relative;\n  display: inline-block; }\n\n/* Tooltip text */\n.tooltip .tooltiptext {\n  font-weight: normal;\n  visibility: hidden;\n  width: 120px;\n  background-color: #353638;\n  color: #fff;\n  text-align: center;\n  padding: .3rem 0;\n  border-radius: .2rem;\n  border: 0.1rem solid black;\n  /* Position the tooltip text */\n  position: absolute;\n  z-index: 1;\n  bottom: 125%;\n  left: 50%;\n  margin-left: -60px;\n  /* Fade in tooltip */\n  opacity: 0;\n  transition: opacity 0.3s; }\n\n/* Tooltip arrow */\n.tooltip .tooltiptext::after {\n  content: \"\";\n  position: absolute;\n  top: 100%;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: #353638 transparent transparent transparent; }\n\n/* Show the tooltip text when you mouse over the tooltip container */\n.tooltip:hover .tooltiptext {\n  visibility: visible;\n  opacity: 1; }\n\n.menu-container {\n  display: flex;\n  flex-direction: column;\n  width: 15%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  background-color: #262626;\n  border-bottom: 0.2rem solid #518adb; }\n\n.fa-menu {\n  margin-right: .4rem; }\n\n.menu-button {\n  min-height: 3rem;\n  font-size: 1.6rem; }\n\n.menu-burger-button {\n  width: 4rem; }\n\n@media only screen and (max-width: 1200px) {\n  .menu-button {\n    font-size: 1.2rem; }\n  .menu-container {\n    width: 25%; } }\n\n@media only screen and (max-width: 40rem) {\n  .menu-button {\n    font-size: 1.2rem; }\n  .menu-container {\n    width: 55%; } }\n\n@media only screen and (max-height: 45rem) {\n  .menu-button {\n    font-size: 1.2rem; } }\n\n.navbar-container {\n  display: flex;\n  width: 100%;\n  height: 5rem;\n  left: 0;\n  top: 0;\n  background-color: #262626;\n  border-bottom: 0.2rem solid #518adb; }\n\n.navbar-container > h2 {\n  margin-top: 1rem;\n  margin-left: 1rem; }\n\n.fa-navbar {\n  margin-right: .4rem; }\n\n.navbar-button {\n  min-height: 3rem;\n  font-size: 1.6rem; }\n\n.navbar-burger-button {\n  width: 4rem; }\n\n@media only screen and (max-width: 40rem) {\n  .navbar-button {\n    font-size: 1.2rem; } }\n\n@media only screen and (max-height: 45rem) {\n  .navbar-button {\n    font-size: 1.2rem; } }\n\n.main-page-container {\n  flex-direction: column; }\n\n.secondary-page-container {\n  flex-direction: row; }\n\n.secondary-page-container, .main-page-container {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  align-items: stretch; }\n\n.main-content-container {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  padding: 2rem; }\n\n.nickSetFailedReason {\n  margin: 0 0 .5rem 0;\n  text-align: center; }\n\n.login-option-container {\n  transform: translateY(-1.5rem); }\n\n.login-badges-container {\n  position: absolute;\n  right: 0;\n  top: 0;\n  font-size: 3rem; }\n\n.login-badges-container > i {\n  margin-top: .5rem;\n  margin-right: .7rem; }\n\n@media only screen and (max-width: 40rem) {\n  .login-badges-container {\n    display: none; } }\n\n.login-form-container {\n  text-align: center; }\n\n.terms-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1rem; }\n\n.terms-paragraph {\n  display: inline-block;\n  margin: 0 1rem 0 0;\n  padding: .5rem 0 0 0; }\n\n@media only screen and (max-width: 40rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n@media only screen and (max-height: 45rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n.terms-container-user {\n  justify-content: center; }\n\n.example-enter {\n  opacity: 0.01;\n  width: 0px; }\n\n.example-enter.example-enter-active {\n  opacity: 1;\n  width: 100px;\n  transition: 700ms; }\n\n.example-leave {\n  opacity: 1;\n  width: 100px; }\n\n.example-leave.example-leave-active {\n  opacity: 0.01;\n  width: 0px;\n  transition: 700ms; }\n\n.splash-modal-outer {\n  margin-left: auto;\n  margin-right: auto; }\n\n.splash-modal-inner {\n  text-align: center; }\n\n.terms-container-create {\n  justify-content: center; }\n", ""]);
+exports.push([module.i, "html {\n  font-size: 62.5%;\n  overflow: hidden;\n  zoom: 1; }\n\nbody {\n  font-size: 1.6rem;\n  color: #cdd7c5;\n  font-family: \"Source Sans Pro\", sans-serif; }\n\nhtml, body, #app {\n  height: 100%;\n  background-color: black; }\n\na {\n  font-weight: bold;\n  color: #a6c3ec;\n  cursor: pointer; }\n\n.a-light {\n  color: #262626; }\n\na:hover {\n  color: #518adb; }\n\n.p-light {\n  color: #262626; }\n\n.emphasised-container {\n  box-shadow: 0 0.1rem #4e4f52, inset 0 0.1rem 0.1rem #191919;\n  border-radius: 0.2rem;\n  background-color: #262626;\n  border: 0.1rem solid black; }\n\n.emphasised-container-light {\n  box-shadow: 0;\n  border-radius: 0;\n  background-color: white;\n  border: 0;\n  border-top: #518adb solid 0.2rem; }\n\n.app-root-container {\n  width: 100%;\n  height: 100%;\n  background-color: #353638;\n  margin: 0; }\n\n.app-overlay-container {\n  display: flex;\n  height: 100%;\n  width: 100%; }\n\n.app-color-overlay {\n  position: absolute;\n  left: -5vw;\n  top: -5vh;\n  width: 110vw;\n  height: 110vh;\n  background-color: black; }\n\n.app-color-overlay-visible {\n  transition: opacity 1000ms linear;\n  visibility: visible;\n  opacity: 0.1; }\n\n.app-color-overlay-invisible {\n  transition: visibility 1000ms linear, opacity 1000ms linear;\n  visibility: hidden;\n  opacity: 0; }\n\n.blur-container {\n  width: 100%;\n  height: 100%;\n  position: absolute;\n  left: 0;\n  top: 0; }\n\n.blur-container {\n  -webkit-filter: blur(10px);\n  -moz-filter: blur(10px);\n  -o-filter: blur(10px);\n  -ms-filter: blur(10px);\n  filter: blur(10px); }\n\n.noSupportContainer {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-color: #262626; }\n\n.noSupportContainer > h1 {\n  text-align: center; }\n\n.noSupportContainer > h2 {\n  text-align: center; }\n\nbutton {\n  cursor: pointer; }\n\nbutton:disabled {\n  cursor: default; }\n\n.button-default {\n  font-size: 4rem;\n  padding: 1.5rem;\n  color: white;\n  background-color: #518adb;\n  border: 0;\n  border-bottom: 0.4rem solid #2b6ece;\n  margin: .8rem; }\n\n.button-default:disabled {\n  opacity: .5; }\n\n.button-good {\n  background-color: #009400;\n  border-bottom: 0.4rem solid #006100; }\n\n.button-ok {\n  background-color: #dd7d00;\n  border-bottom: 0.4rem solid #aa6000; }\n\n.button-bad {\n  background-color: #a70000;\n  border-bottom: 0.4rem solid #740000; }\n\n@media only screen and (max-width: 40rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; }\n  .button-good {\n    border-bottom: 0.2rem solid #006100; }\n  .button-ok {\n    border-bottom: 0.2rem solid #aa6000; }\n  .button-bad {\n    border-bottom: 0.2rem solid #740000; } }\n\n@media only screen and (max-height: 45rem) {\n  .button-default {\n    font-size: 2rem;\n    padding: .5rem;\n    border-bottom: 0.2rem solid #2b6ece; }\n  .button-good {\n    border-bottom: 0.2rem solid #006100; }\n  .button-ok {\n    border-bottom: 0.2rem solid #aa6000; }\n  .button-bad {\n    border-bottom: 0.2rem solid #740000; } }\n\n.checkbox-container {\n  display: inline;\n  position: relative;\n  margin-left: .2rem;\n  margin-bottom: 0rem;\n  cursor: pointer;\n  font-size: 2.2rem;\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none; }\n\n/* Hide the browser's default checkbox */\n.checkbox-container input {\n  position: absolute;\n  opacity: 0;\n  cursor: pointer; }\n\n.checkbox-checkmark {\n  position: absolute;\n  display: inline;\n  top: .6rem;\n  left: 0;\n  height: 2.5rem;\n  width: 2.5rem;\n  background-color: #eee; }\n\n/* On mouse-over, add a grey background color */\n.checkbox-container:hover input ~ .checkbox-checkmark {\n  background-color: #ccc; }\n\n/* When the checkbox is checked, add a blue background */\n.checkbox-container input:checked ~ .checkbox-checkmark {\n  background-color: #518adb; }\n\n/* Create the checkmark/indicator (hidden when not checked) */\n.checkbox-checkmark:after {\n  content: \"\";\n  position: absolute;\n  display: none; }\n\n/* Show the checkmark when checked */\n.checkbox-container input:checked ~ .checkbox-checkmark:after {\n  display: inline; }\n\n/* Style the checkmark/indicator */\n.checkbox-container .checkbox-checkmark:after {\n  left: .9rem;\n  top: .5rem;\n  width: .5rem;\n  height: 1rem;\n  border: solid white;\n  border-width: 0 .3rem .3rem 0;\n  -webkit-transform: rotate(45deg);\n  -ms-transform: rotate(45deg);\n  transform: rotate(45deg); }\n\n.modal-fade-out {\n  transform: translateY(-1.5rem);\n  opacity: 0;\n  transition: opacity 150ms linear, transform 150ms linear !important; }\n\n.modal-wrapper {\n  display: flex;\n  justify-content: center;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  left: 0;\n  top: -1.5rem;\n  z-index: 15;\n  -webkit-transition: width 2s;\n  /* Safari */\n  transition: width 2s; }\n\n.modal-outer-container {\n  width: 100%;\n  max-width: 100rem;\n  display: flex; }\n\n.modal-inner-container {\n  display: flex;\n  flex-direction: column;\n  flex-grow: 1;\n  margin: 5%;\n  background-color: #262626;\n  border-radius: .5rem;\n  box-shadow: 0 0 5rem 0.1rem #1d1d1d;\n  padding-bottom: 2rem;\n  max-width: 100vw; }\n\n.modal-disclaimer-text {\n  font-size: 1.2rem;\n  font-style: italic;\n  margin-left: 2rem;\n  margin-right: 2rem; }\n\n.modal-large-text {\n  font-size: 1.6rem; }\n\n@media only screen and (max-width: 40rem) {\n  .modal-inner-container {\n    margin: 0;\n    border-radius: 0; }\n  .modal-inner-container h2 {\n    font-size: 4.8rem;\n    margin-top: 2rem;\n    margin-bottom: 2rem; }\n  .modal-disclaimer-tex {\n    font-size: 1.6rem; }\n  .modal-inner-container .modal-large-text {\n    font-size: 3.2rem; } }\n\n::-webkit-scrollbar {\n  width: .5rem;\n  z-index: 10; }\n\n::-webkit-scrollbar-track {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-track:hover {\n  background: #353638;\n  z-index: 10; }\n\n::-webkit-scrollbar-thumb {\n  background: #518adb; }\n\n::-webkit-scrollbar-thumb:hover {\n  background: #518adb; }\n\n.tab-container {\n  width: 100%;\n  height: 6rem;\n  display: flex; }\n\n.tab {\n  position: relative;\n  margin: .5rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  flex-grow: 1;\n  height: 100%;\n  background-color: #353638;\n  cursor: pointer; }\n\n.tab-light {\n  background-color: #e2e2e2; }\n\n@media only screen and (max-width: 40rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n@media only screen and (max-height: 45rem) {\n  .tab > h1 {\n    margin-top: .2rem;\n    margin-bottom: .2rem; }\n  .tab-container {\n    height: auto; } }\n\n.tab-selected {\n  color: #518adb;\n  background-color: #4e4f52; }\n\n.tab-selected-light {\n  color: #518adb;\n  background-color: #fcfcfc; }\n\n.tab-disabled {\n  color: #4e4f52; }\n\n.tab-disabled-light {\n  color: #fcfcfc; }\n\n/* Tooltip container */\n.tooltip {\n  position: relative;\n  display: inline-block; }\n\n/* Tooltip text */\n.tooltip .tooltiptext {\n  font-weight: normal;\n  visibility: hidden;\n  width: 120px;\n  background-color: #353638;\n  color: #fff;\n  text-align: center;\n  padding: .3rem 0;\n  border-radius: .2rem;\n  border: 0.1rem solid black;\n  /* Position the tooltip text */\n  position: absolute;\n  z-index: 1;\n  bottom: 125%;\n  left: 50%;\n  margin-left: -60px;\n  /* Fade in tooltip */\n  opacity: 0;\n  transition: opacity 0.3s; }\n\n/* Tooltip arrow */\n.tooltip .tooltiptext::after {\n  content: \"\";\n  position: absolute;\n  top: 100%;\n  left: 50%;\n  margin-left: -5px;\n  border-width: 5px;\n  border-style: solid;\n  border-color: #353638 transparent transparent transparent; }\n\n/* Show the tooltip text when you mouse over the tooltip container */\n.tooltip:hover .tooltiptext {\n  visibility: visible;\n  opacity: 1; }\n\n.menu-container {\n  display: flex;\n  flex-direction: column;\n  width: 15%;\n  height: 100%;\n  left: 0;\n  top: 0;\n  background-color: #262626; }\n\n.fa-menu {\n  margin-right: .4rem; }\n\n.menu-button {\n  min-height: 3rem;\n  height: 5rem;\n  font-size: 1.6rem; }\n\n.menu-burger-button {\n  width: 4rem; }\n\n@media only screen and (max-width: 1200px) {\n  .menu-button {\n    font-size: 1.2rem; }\n  .menu-container {\n    width: 25%; } }\n\n@media only screen and (max-width: 40rem) {\n  .menu-button {\n    font-size: 1.6rem;\n    height: 5rem; }\n  .menu-container {\n    width: 85%; } }\n\n.navbar-container {\n  display: flex;\n  width: 100%;\n  height: 5rem;\n  left: 0;\n  top: 0;\n  background-color: #262626;\n  border-bottom: 0.2rem solid #518adb; }\n\n.navbar-container > h2 {\n  margin-top: 1rem;\n  margin-left: 1rem; }\n\n.navbar-button {\n  min-height: 3rem;\n  font-size: 1.6rem;\n  padding: 0; }\n\n.navbar-burger-button {\n  width: 4rem; }\n\n.navbar-name {\n  float: right;\n  position: absolute;\n  right: 2rem; }\n\n@media only screen and (max-width: 40rem) {\n  .navbar-button {\n    font-size: 3.2rem; }\n  .navbar-container {\n    height: 8rem; }\n  .navbar-container > h2 {\n    margin-top: 2rem;\n    margin-left: 2rem;\n    font-size: 3.2rem; }\n  .navbar-burger-button {\n    width: 6rem; } }\n\n.main-page-container {\n  flex-direction: column; }\n\n.secondary-page-container {\n  flex-direction: row; }\n\n.secondary-page-container, .main-page-container {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  align-items: stretch; }\n\n.main-content-container {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  padding: 2rem; }\n\n@media only screen and (max-width: 40rem) {\n  .main-content-container {\n    width: auto; } }\n\n.login-badges-container {\n  position: absolute;\n  right: 0;\n  top: 0;\n  font-size: 3rem; }\n\n.login-badges-container > i {\n  margin-top: .5rem;\n  margin-right: .7rem; }\n\n@media only screen and (max-width: 40rem) {\n  .login-badges-container {\n    display: none; } }\n\n.login-form-container {\n  text-align: center; }\n\n.terms-container {\n  display: flex;\n  flex-direction: row;\n  margin-bottom: 1rem;\n  margin-top: 1rem; }\n\n.terms-paragraph {\n  display: inline-block;\n  margin: 0 1rem 0 0;\n  padding: .5rem 0 0 0; }\n\n@media only screen and (max-width: 40rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n@media only screen and (max-height: 45rem) {\n  .terms-container {\n    margin-bottom: 1.4rem; } }\n\n.terms-container-user {\n  justify-content: center; }\n\n.login-create-container {\n  text-align: left;\n  display: flex;\n  flex-direction: column;\n  justify-content: start;\n  padding: 0 3rem 3rem 3rem; }\n\n.login-create-textinput {\n  padding: 1rem;\n  font-size: 1.6rem; }\n\n.login-create-label {\n  font-size: 3.2rem; }\n\n.login-error-text {\n  font-size: 3.2rem;\n  color: red;\n  padding-left: 2rem; }\n\n.splash-modal-outer {\n  margin-left: auto;\n  margin-right: auto; }\n\n.splash-modal-inner {\n  text-align: center; }\n\n.terms-container-create {\n  justify-content: center; }\n", ""]);
 
 // exports
 
@@ -32130,21 +32130,37 @@ var unsetInitialRoute = exports.unsetInitialRoute = function unsetInitialRoute()
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.setUserDetails = exports.setResponseErrorMessage = exports.setCreateAccount = exports.setLoginStatus = exports.setLoginStatusPartout = exports.setLoginStatusFacebook = exports.initLoginState = undefined;
+
+var _config = __webpack_require__(/*! ../config */ "./src/config.js");
+
 var initLoginState = exports.initLoginState = function initLoginState() {
   var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
       _ref$loggedInFacebook = _ref.loggedInFacebook,
       loggedInFacebook = _ref$loggedInFacebook === undefined ? false : _ref$loggedInFacebook,
       _ref$loggedInPartout = _ref.loggedInPartout,
       loggedInPartout = _ref$loggedInPartout === undefined ? false : _ref$loggedInPartout,
+      _ref$createAccount = _ref.createAccount,
+      createAccount = _ref$createAccount === undefined ? false : _ref$createAccount,
+      _ref$responseErrorMes = _ref.responseErrorMessage,
+      responseErrorMessage = _ref$responseErrorMes === undefined ? '' : _ref$responseErrorMes,
       _ref$loggedIn = _ref.loggedIn,
-      loggedIn = _ref$loggedIn === undefined ? false : _ref$loggedIn;
+      loggedIn = _ref$loggedIn === undefined ? false : _ref$loggedIn,
+      _ref$email = _ref.email,
+      email = _ref$email === undefined ? '' : _ref$email,
+      _ref$name = _ref.name,
+      name = _ref$name === undefined ? _config.buildForDev ? 'Tim Eastwood' : '' : _ref$name;
 
   return {
     type: 'INIT_LOGIN_STATE',
     loginState: {
       loggedInFacebook: loggedInFacebook,
       loggedInPartout: loggedInPartout,
-      loggedIn: loggedIn
+      createAccount: createAccount,
+      responseErrorMessage: responseErrorMessage,
+      loggedIn: loggedIn,
+      email: email,
+      name: name
     }
   };
 };
@@ -32166,6 +32182,24 @@ var setLoginStatus = exports.setLoginStatus = function setLoginStatus(status) {
   return {
     type: 'SET_LOGIN_STATUS',
     status: status
+  };
+};
+
+var setCreateAccount = exports.setCreateAccount = function setCreateAccount() {
+  return {
+    type: 'SET_CREATE_ACCOUNT'
+  };
+};
+var setResponseErrorMessage = exports.setResponseErrorMessage = function setResponseErrorMessage(message) {
+  return {
+    type: 'SET_RESPONSE_ERROR_MESSAGE',
+    message: message
+  };
+};
+var setUserDetails = exports.setUserDetails = function setUserDetails(details) {
+  return {
+    type: 'SET_USER_DETAILS',
+    details: details
   };
 };
 
@@ -32224,7 +32258,9 @@ if (!_config.webpackDevServer) {
     });
   }.bind(undefined);
 } else {
-  (0, _login.dummyLogin)();
+  if (_config.useDummyLogin) {
+    (0, _login.dummyLogin)();
+  }
 }
 
 // browser detection
@@ -32571,17 +32607,13 @@ var Listing = function (_React$Component) {
       _this.props.dispatch((0, _UIActions.setRoute)('/home'));
     };
 
-    _this.state = {
-      imgPath: _config.serverLocation + '/images/'
-    };
+    _this.state = {};
     return _this;
   }
 
   _createClass(Listing, [{
     key: 'render',
     value: function render() {
-      var imgPath = this.state.imgPath;
-
       return React.createElement(
         'div',
         null,
@@ -32596,8 +32628,41 @@ var Listing = function (_React$Component) {
           { className: 'button-default', onClick: this.onClick },
           'Home'
         ),
-        React.createElement('h3', null),
-        React.createElement('img', { src: imgPath + 'IMG_20200113_154848_MP.jpg' })
+        React.createElement(
+          'h3',
+          null,
+          '2003 Nissan Patrol GU 3.0 ZD30ddi Manual Wagon'
+        ),
+        React.createElement(
+          'h4',
+          null,
+          'Part Out or Sell Whole'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'Location: Wantirna, VIC 3152'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'Sell Whole Price: $17,500'
+        ),
+        React.createElement(
+          'p',
+          null,
+          'Gallery:'
+        ),
+        React.createElement(
+          'div',
+          { className: 'listing-image-container' },
+          React.createElement('img', { className: 'listing-image', src: _config.serverImagePath + 'IMG_20200113_154848_MP.jpg' }),
+          React.createElement('img', { className: 'listing-image', src: _config.serverImagePath + 'IMG_20200113_154904.jpg' }),
+          React.createElement('img', { className: 'listing-image', src: _config.serverImagePath + 'IMG_20200113_154919_MP.jpg' }),
+          React.createElement('img', { className: 'listing-image', src: _config.serverImagePath + 'IMG_20200113_154934_MP.jpg' }),
+          React.createElement('img', { className: 'listing-image', src: _config.serverImagePath + 'IMG_20200113_154955_MP.jpg' }),
+          React.createElement('img', { className: 'listing-image', src: _config.serverImagePath + 'IMG_20200113_155002_MP.jpg' })
+        )
       );
     }
   }]);
@@ -32626,6 +32691,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
@@ -32633,6 +32700,10 @@ var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-r
 var _reactAnimationComponents = __webpack_require__(/*! react-animation-components */ "./node_modules/react-animation-components/lib/react-animation-components.js");
 
 var _config = __webpack_require__(/*! ../config */ "./src/config.js");
+
+var _UIActions = __webpack_require__(/*! ../actions/UIActions */ "./src/actions/UIActions.js");
+
+var _loginActions = __webpack_require__(/*! ../actions/loginActions */ "./src/actions/loginActions.js");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -32648,7 +32719,54 @@ var LoginForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (LoginForm.__proto__ || Object.getPrototypeOf(LoginForm)).call(this, props));
 
-    _this.state = {};
+    _this.onAcceptTerms = function () {
+      console.log("terms accept");
+      _this.setState(_extends({}, _this.state, {
+        termsAccepted: !_this.state.termsAccepted
+      }));
+    };
+
+    _this.onCreateAccount = function () {
+      console.log("Creating login...");
+      _this.setState(_extends({}, _this.state, {
+        awaitingCreateResponse: true
+      }));
+      fetch(_config.serverAPILocation, {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "action": "createPartoutUser"
+        })
+      })
+      //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
+      .then(function (result) {
+        return result.json();
+      }).then(function (result) {
+        if (result.loggedIn === "1") {
+          console.log(result);
+          _this.props.dispatch((0, _loginActions.setUserDetails)(result));
+          _this.props.dispatch((0, _loginActions.setLoginStatusPartout)(true));
+          setTimeout(function () {
+            _this.props.dispatch((0, _loginActions.setLoginStatus)(true)); // delay the login so the login modal can fade out
+            _this.props.dispatch((0, _UIActions.setRoute)('/home'));
+          }, 1000);
+        } else {
+          console.log("Failed create account:");
+          console.log(result);
+        }
+      }, function (error) {
+        console.log("Error:");
+        console.log(error);
+      });
+    };
+
+    _this.state = {
+      termsAccepted: false,
+      awaitingCreateResponse: false
+    };
     return _this;
   }
 
@@ -32657,7 +32775,14 @@ var LoginForm = function (_React$Component) {
     value: function render() {
       var _props$login = this.props.login,
           loggedInFacebook = _props$login.loggedInFacebook,
-          loggedInPartout = _props$login.loggedInPartout;
+          loggedInPartout = _props$login.loggedInPartout,
+          createAccount = _props$login.createAccount,
+          responseErrorMessage = _props$login.responseErrorMessage,
+          email = _props$login.email,
+          name = _props$login.name;
+      var _state = this.state,
+          awaitingCreateResponse = _state.awaitingCreateResponse,
+          termsAccepted = _state.termsAccepted;
 
       return React.createElement(
         'div',
@@ -32675,11 +32800,11 @@ var LoginForm = function (_React$Component) {
                 'div',
                 { className: 'login-form-container' },
                 React.createElement(
-                  'h4',
+                  'h2',
                   null,
                   'Welcome to PartOut!'
                 ),
-                loggedInFacebook && !loggedInPartout && React.createElement(
+                loggedInFacebook && !loggedInPartout && !createAccount && React.createElement(
                   'p',
                   null,
                   'Logging in...'
@@ -32692,10 +32817,76 @@ var LoginForm = function (_React$Component) {
                   'data-auto-logout-link': 'false',
                   'data-use-continue-as': 'true'
                 }),
+                createAccount && React.createElement(
+                  'div',
+                  { className: 'login-create-container' },
+                  React.createElement(
+                    'p',
+                    null,
+                    'Please accept the terms and click Confirm to finish setting up your account'
+                  ),
+                  React.createElement(
+                    'label',
+                    { className: 'login-create-label' },
+                    'Name:'
+                  ),
+                  React.createElement('input', { type: 'text', className: 'login-create-textinput', value: name, disabled: true }),
+                  React.createElement(
+                    'label',
+                    { className: 'login-create-label' },
+                    'Email:'
+                  ),
+                  React.createElement('input', { type: 'email', className: 'login-create-textinput', value: email, disabled: true }),
+                  React.createElement(
+                    'div',
+                    { className: 'terms-container' },
+                    React.createElement(
+                      'p',
+                      { className: "terms-paragraph" },
+                      'Accept ',
+                      React.createElement(
+                        'a',
+                        { href: '/terms.html' },
+                        'terms and conditions'
+                      ),
+                      '?'
+                    ),
+                    React.createElement(
+                      'label',
+                      { className: 'checkbox-container' },
+                      React.createElement('input', {
+                        type: 'checkbox',
+                        checked: termsAccepted ? "checked" : '',
+                        onChange: this.onAcceptTerms
+                      }),
+                      React.createElement('span', { className: 'checkbox-checkmark' })
+                    )
+                  ),
+                  React.createElement(
+                    'button',
+                    { onClick: this.onCreateAccount, className: 'button-default', disabled: !termsAccepted || awaitingCreateResponse },
+                    awaitingCreateResponse ? React.createElement('span', { className: 'fa fa-spinner fa-spin' }) : "Confirm"
+                  ),
+                  awaitingCreateResponse && loggedInPartout && React.createElement(
+                    'button',
+                    { className: 'button-default login-success-button', disabled: true },
+                    'Success!'
+                  )
+                ),
+                responseErrorMessage != '' && React.createElement(
+                  'p',
+                  { className: 'login-error-text' },
+                  responseErrorMessage
+                ),
                 !loggedInFacebook && React.createElement(
                   'p',
-                  null,
-                  'Please log in using Facebook to continue. We do not receive or store any of your personal or profile information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information or use it for any other purpose except with your express permission.'
+                  { className: 'modal-large-text' },
+                  'Please log in using Facebook to continue.'
+                ),
+                !loggedInFacebook && React.createElement(
+                  'p',
+                  { className: 'modal-disclaimer-text' },
+                  'We do not store any of your personal information except your email address, which is used only to alert you about changes to your listings unless you disable that feature. We will not share your information with anyone or use it for any other purpose except with your express permission.'
                 )
               )
             )
@@ -32854,6 +33045,11 @@ var Navbar = function (_React$Component) {
           'h2',
           null,
           'Partout'
+        ),
+        React.createElement(
+          'h4',
+          { className: 'navbar-name' },
+          this.props.login.name
         )
       );
     }
@@ -32889,6 +33085,10 @@ var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-r
 
 var _UIActions = __webpack_require__(/*! ../actions/UIActions */ "./src/actions/UIActions.js");
 
+var _config = __webpack_require__(/*! ../config */ "./src/config.js");
+
+var _loginActions = __webpack_require__(/*! ../actions/loginActions */ "./src/actions/loginActions.js");
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -32917,6 +33117,35 @@ var RouteManager = function (_React$Component) {
       if (!_this.props.login.loggedIn) {
         _this.props.dispatch((0, _UIActions.setRoute)('/login'));
       }
+      fetch(_config.serverAPILocation, {
+        method: 'POST',
+        cache: 'no-cache',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          "action": "checkLoginSimple"
+        })
+      }).then(function (result) {
+        return result.json();
+      }).then(function (result) {
+        if (result.loggedIn === "1") {
+          console.log(result);
+          _this.props.dispatch((0, _loginActions.setUserDetails)(result));
+          _this.props.dispatch((0, _loginActions.setLoginStatusPartout)(true));
+          _this.props.dispatch((0, _loginActions.setLoginStatusFacebook)(true));
+          setTimeout(function () {
+            _this.props.dispatch((0, _loginActions.setLoginStatus)(true)); // delay the login so the login modal can fade out
+            _this.props.dispatch((0, _UIActions.setRoute)('/home'));
+          }, 1000);
+        } else {
+          console.log("Failed simple login check:");
+          console.log(result);
+        }
+      }, function (error) {
+        console.log("Error:");
+        console.log(error);
+      });
     };
 
     _this.state = {};
@@ -33027,10 +33256,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 //set to false for production
 var buildForDev = exports.buildForDev = false;
+var useDummyLogin = exports.useDummyLogin = true; //affects dev only
+var stopAtLoginResponse = exports.stopAtLoginResponse = false; //affects dev only
+var simulateCreateAccount = exports.simulateCreateAccount = false; //affects dev only
 var webpackDevServer = exports.webpackDevServer = buildForDev;
+var prodServerUrlSubfolder = 'partout';
 
 var serverAPILocation = exports.serverAPILocation = 'api.php';
-var serverLocation = exports.serverLocation = buildForDev ? '' : '/partout';
+var serverLocation = exports.serverLocation = buildForDev ? '' : '/' + prodServerUrlSubfolder;
+var serverImagePath = exports.serverImagePath = serverLocation + '/images/';
 
 /***/ }),
 
@@ -33123,7 +33357,22 @@ exports.default = function () {
       });
     case 'SET_LOGIN_STATUS':
       return _extends({}, state, {
-        loggedIn: action.status
+        loggedIn: action.status,
+        createAccount: action.status ? false : state.createAccount,
+        responseErrorMessage: action.status ? '' : state.responseErrorMessage
+      });
+    case 'SET_CREATE_ACCOUNT':
+      return _extends({}, state, {
+        createAccount: true
+      });
+    case 'SET_RESPONSE_ERROR_MESSAGE':
+      return _extends({}, state, {
+        responseErrorMessage: action.message
+      });
+    case 'SET_USER_DETAILS':
+      return _extends({}, state, {
+        email: action.details.email,
+        name: action.details.name
       });
     default:
       return state;
@@ -33278,8 +33527,15 @@ var partOutLoginRequest = function partOutLoginRequest() {
         _store.store.dispatch((0, _UIActions.setRoute)('/home'));
       }, 200);
     } else {
-      console.log("Partout auth failed:");
       console.log(result);
+      if (result.reason == 'no_partout_user') {
+        _store.store.dispatch((0, _loginActions.setCreateAccount)());
+      } else if (result.reason == 'no_facebook_session') {
+        _store.store.dispatch(setResponseErrorMessage("Invalid facebook session! Please refresh the page and try again."));
+      } else {
+        console.log("Partout auth failed for some reason. Response:");
+        console.log(result);
+      }
     }
   }, function (error) {
     console.log("error:");
@@ -33304,6 +33560,8 @@ var facebookLoginCheck = function facebookLoginCheck(fbResponse) {
     return result.json();
   }).then(function (result) {
     if (result.loggedIn === "1") {
+      console.log(result);
+      _store.store.dispatch((0, _loginActions.setUserDetails)(result));
       partOutLoginRequest();
       //console.log("Partout accepted facebook auth!")
     } else {
@@ -33319,15 +33577,17 @@ var facebookLoginCheck = function facebookLoginCheck(fbResponse) {
 var facebookCallback = exports.facebookCallback = function facebookCallback(response) {
   console.log("Facebook auth response received...");
   console.log(response);
-  if (response.status == 'connected') {
-    setTimeout(function () {
-      _store.store.dispatch((0, _loginActions.setLoginStatusFacebook)(true));
-      facebookLoginCheck(response.authResponse);
-    }, 1000);
-  } else {
-    console.log(response);
-    _store.store.dispatch((0, _loginActions.setLoginStatusFacebook)(false));
-    _store.store.dispatch((0, _loginActions.setLoginStatusPartout)(false));
+  if (!_store.store.getState().login.loggedIn) {
+    if (response.status == 'connected') {
+      setTimeout(function () {
+        _store.store.dispatch((0, _loginActions.setLoginStatusFacebook)(true));
+        facebookLoginCheck(response.authResponse);
+      }, 1000);
+    } else {
+      console.log(response);
+      _store.store.dispatch((0, _loginActions.setLoginStatusFacebook)(false));
+      _store.store.dispatch((0, _loginActions.setLoginStatusPartout)(false));
+    }
   }
   return false;
 };
@@ -33335,14 +33595,21 @@ var facebookCallback = exports.facebookCallback = function facebookCallback(resp
 var dummyLogin = exports.dummyLogin = function dummyLogin() {
   setTimeout(function () {
     _store.store.dispatch((0, _loginActions.setLoginStatusFacebook)(true));
-    _store.store.dispatch((0, _loginActions.setLoginStatusPartout)(true));
+    if (!_config.stopAtLoginResponse) {
+      _store.store.dispatch((0, _loginActions.setLoginStatusPartout)(true));
+    }
+    if (_config.simulateCreateAccount) {
+      _store.store.dispatch((0, _loginActions.setCreateAccount)());
+    }
     console.log("Logging in... (dummy mode)");
   }, 800);
-  setTimeout(function () {
-    console.log("Logged in! (dummy mode)");
-    _store.store.dispatch((0, _loginActions.setLoginStatus)(true)); // delay the login so the login modal can fade out
-    _store.store.dispatch((0, _UIActions.setRoute)('/home'));
-  }, 1200);
+  if (!_config.stopAtLoginResponse) {
+    setTimeout(function () {
+      console.log("Logged in! (dummy mode)");
+      _store.store.dispatch((0, _loginActions.setLoginStatus)(true)); // delay the login so the login modal can fade out
+      _store.store.dispatch((0, _UIActions.setRoute)('/home'));
+    }, 1200);
+  }
 };
 
 /***/ })
