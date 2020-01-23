@@ -36,7 +36,6 @@ class LoginForm extends React.Component {
         "action": "createPartoutUser"
       })
     })
-      //.then((res) => { res.text().then(function (text) { console.log(text) }) }) //debug output from api.php
       .then(result => result.json())
       .then(
         (result) => {
@@ -68,7 +67,7 @@ class LoginForm extends React.Component {
       email,
       name
     } = this.props.login
-    const { 
+    const {
       awaitingCreateResponse,
       termsAccepted
     } = this.state
@@ -94,8 +93,7 @@ class LoginForm extends React.Component {
                     data-auto-logout-link="false"
                     data-use-continue-as="true"
                     >
-                  </div>
-                }
+                  </div>}
 
                 {createAccount && <div className="login-create-container">
                   <p>Please accept the terms and click Confirm to finish setting up your account</p>
